@@ -20,19 +20,7 @@ sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
 sudo apt-get install -y toilet dialog 
 clear
-if [ "$(getconf LONG_BIT)" == "64" ]; then
-      clear
-      echo "Raspberry Pi OS 64 bit is running..."
-      echo ""
-      toilet "KickOS 64 bit" --metal
-      
-    else 
-      clear
-      echo "Raspberry Pi OS 32 bit is running... "
-      echo ""
-      toilet "KickOS" --metal
-      
-fi    
+   
       
       echo ""
       echo " "
@@ -87,37 +75,7 @@ CHOICE=$(dialog --clear \
                 2>&1 >/dev/tty)
                 
    
-#*********************************************  #OLED & LED comming soon, maybe :)  *****************************
-#****************************************************************************************************************
 
-#Poser() {
-
-#sudo apt install -y python-dev
-#sudo apt install -y python-smbus i2c-tools
-#sudo apt install -y python-pil
-#sudo apt install -y python-pip
-#sudo apt install -y python-setuptools 
-#sudo apt install -y python-dev
-#sudo apt install -y python-smbus i2c-tools
-#sudo apt install -y python-pil
-#sudo apt install -y python-pip
-#sudo apt install -y python-setuptools 
-
-#its ok but dissabled
-#cd /home/$USER/.KickOS/OLED
-#sudo chmod -R 777 /home/$USER/.KickOS/OLED
-
-
-# Test OLED
-#i2cdetect -y 1
-#echo " Should Say: "3C""
-#python Amiga.py
-
-#cd /home/$USER/.KickOS/LED
-#python LED.py
-
-
-#}
 
 #*********************************************  #Time to update:)  **********************************************
 #****************************************************************************************************************
@@ -267,66 +225,22 @@ fi
   
      
   
-  if [ $USER == "pi" ]; then
-     
 
-      # Settings XFCE4 Rasperry OS
       
    
        cp -rf ~/KickOS/.data/.config/ /home/$USER/
        cp -rf ~/KickOS/.data/.local/ /home/$USER/  
        sudo raspi-config nonint do_boot_behaviour B4
-       else
-       # Settings XFCE4 Amibian
-               clear
-               toilet -F gay Amibian
-               echo ""
-               echo ""
-               echo "Hello Amibian User,"
-               echo ""
-               echo "Don't worry, Amibian service (menu, start, ..) stays as it is."
-               echo "There is nothing to improve here. :-)"
-               echo ""
-               echo "Only the look of the desktop is adjusted a little ..."
-               echo ".. and in addition we add things like Retropie, PiKiss, ... :-)"
-	       echo ""
-               sleep 1s
-               echo "Backup Settings.... "
-     
-               #sudo cp -R /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
-               sudo cp -R /usr/share/rpd-wallpaper/* /usr/share/backgrounds/
-               
-               sudo chmod -R 777 ~/.backup/
-               cp -rf ~/.config/ ~/.backup/.config
-               cp -rf ~/.local/ ~/.backup/.local
-               cp -rf /usr/local/bin ~/.backup/usr
-	       cp -rf ~/KickOS/.data/.config/ /home/$USER/
-               cp -rf ~/KickOS/.data/.local/ /home/$USER/
-               sudo rm -rf /home/$USER/.config
-               
-               
-                cd  /home/amibian/KickOS/.pac/amibian/
-                unzip -u /home/amibian/KickOS/.pac/amibian/.config.zip
-                unzip -u /home/amibian/KickOS/.pac/amibian/.local.zip
-                cp -rf /home/amibian/KickOS/.pac/amibian/.config/ /home/$USER/
-                cp -rf /home/amibian/KickOS/.pac/amibian/.local/ /home/$USER/  
-                sudo rm -rf  /home/amibian/.config/autostart/
-                cd ~
-                mkdir /home/amibian/Amiga/conf/ 
-                cp -rf /home/amibian/KickOS/Amiga/amibian/conf/* /home/amibian/Amiga/conf/
-                cp -rf /home/amibian/KickOS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
-                cp -rf /home/amibian/KickOS/Amiga/amibian/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
-fi 
-
+       
 
 }
 
 
-#***************************************** # Install Amiberry  *********************************************
+#***************************************** # Install FS-UAE  *********************************************
 #****************************************************************************************************************
      
      
- KickOS_Amiberry() {
+ KickOS_FS-UAE() {
   
       
  
@@ -334,37 +248,18 @@ fi
  
        echo " "
        echo " "
-       echo "  ... here comes Amiberry 64 bit :-) "
-       
-       
-       clear
-       toilet "KickOS" --metal
-       toilet -F gay 64bit
-       echo " "
-       echo " "
-        echo " ... here comes Amiberry 64 bit   :-)"
-       
-      cd /home/$USER/KickOS/Amiga
-		unzip -u /home/$USER/KickOS/Amiga/amiberry-v3.3-rpi4-64bit.zip 
-		cp -rf /home/$USER/KickOS/Amiga/amiberry-rpi4-64bit/* /home/$USER/Amiga
-		cp -rf /home/$USER/KickOS/Amiga/amiberry /home/$USER/Amiga/
-		sudo chmod -R 777 /home/$USER/amiberry
+       echo "  ... here comes FS-UAE 64 bit :-) "
        
        
       
-      
-      cp -rf /home/$USER/KickOS/Amiga/amiberry /home/$USER/Amiga/
       
  
        
     else
     
-       echo " ... here comes Amiberry 32 bit   :-)"
+       echo " ... here comes FS-UAE 32 bit   :-)"
       
    
-	  cd /home/$USER/KickOS/Amiga
-      	  unzip -u /home/$USER/KickOS/Amiga/amiberry-v3.3-rpi4-dmx-32bit.zip 
-          cp -rf /home/$USER/KickOS/Amiga/amiberry-rpi4-dmx-32bit/* /home/$USER/Amiga/
 	  
        
        
@@ -607,13 +502,7 @@ else
             fi
       
     
-    #Install PiKISS
-      cd
-      git clone --depth=1 https://github.com/jmcerrejon/PiKISS
-      sudo chmod -R 777 /home/$USER/PiKISS
-      cd PiKISS
-      
-      #./piKiss.sh
+    
       cd ~/KickOS/config/
       
      
@@ -645,17 +534,10 @@ KickOS_Retropie() {
 #Install Retropie/Setup
 
       
-    if [ "$(getconf LONG_BIT)" == "64" ]; then
-   
-      clear
-       toilet "KickOS" --metal
-       toilet -F gay 64bit
-      echo " "
-      echo " "
-      echo "Sorry, Retropie dosn´t support 64 bit OS... (-:     "   
+    
 
       
-    else
+
 if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; then     
     echo " "
       clear
@@ -669,10 +551,9 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       sudo chmod -R 777 /home/$USER/RetroPie-Setup/
       cd /home/$USER/RetroPie-Setup/ 
       sudo __nodialog=1 ./retropie_packages.sh setup binaries
-      #Amibian dosen´t install "Binary" !?!
-      #if [ $USER == "pi" ]; then
+     
       sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-      #fi
+     
       clear
       toilet "KickOS" --metal
       sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
@@ -680,8 +561,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       cd /home/$USER/KickOS/Retropie/
       sudo unzip -u /home/$USER/KickOS/Retropie/data.zip
       cp -rf /home/$USER/KickOS/Retropie/roms/* /home/$USER/RetroPie/roms
-      #unzip -u /home/$USER/KickOS/Retropie/all.zip
-      #sudo cp -R /home/$USER/KickOS/Retropie/all/* /opt/retropie/configs/
+  
       cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
       
       
@@ -720,7 +600,7 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
       sudo chmod -R 777 /etc/emulationstation/
       
     
- fi      
+    
   
 }
 
@@ -739,7 +619,7 @@ case $CHOICE in
             #Poser
             KickOS_Tools
             KickOS_Desktop
-            KickOS_Amiberry
+            KickOS_FS-UAE
             Configure_Amiga
             KickOS_Addons
             KickOS_Retropie
@@ -749,7 +629,7 @@ case $CHOICE in
             #Poser
             KickOS_Tools
             KickOS_Desktop
-            KickOS_Amiberry
+            KickOS_FS-UAE
             Configure_Amiga
             KickOS_Addons
             KickOS_Retropie
@@ -762,7 +642,7 @@ case $CHOICE in
             #Poser
             KickOS_Tools
             KickOS_Desktop
-            KickOS_Amiberry
+            KickOS_FS-UAE
             Configure_Amiga
 	    KickOS_Update
            
