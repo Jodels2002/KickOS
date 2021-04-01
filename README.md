@@ -41,9 +41,9 @@ On the raspberry you open a terminal window and type following commands:
 
 git clone --depth=1 https://github.com/Jodels2002/KickOS.git
 
-sudo chmod -R 777 KickPi-OS
+sudo chmod -R 777 KickOS
 
-cd KickPi-OS
+cd KickOS
 
 ./setup.sh
 
