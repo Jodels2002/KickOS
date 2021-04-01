@@ -39,7 +39,7 @@ Optional for Amiga Forever owners:
 # Installation:
 On the raspberry you open a terminal window and type following commands:
 
-git clone --depth=1 https://github.com/Jodels2002/KickOS
+git clone --depth=1 https://github.com/Jodels2002/KickOS.git
 
 sudo chmod -R 777 KickPi-OS
 
