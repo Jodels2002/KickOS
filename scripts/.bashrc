@@ -115,13 +115,13 @@ if [ ! -f /home/$USER/Amiga/Emulators/amiberry/conf/Amiga.uae ]; then
       clear
       toilet -F gay KickPi-OS
       cd /home/$USER/KickPi-OS/Amiga/
-      ./amiberry -f /home/$USER/KickPi-OS/Amiga/conf/Amiga.uae
+      ./amiberry -f /home/$USER/KickOS/Amiga/conf/Amiga.uae
       
       fi
 clear
-toilet "KickPi-OS" --metal
-echo "KickPI-OS ROM Operating System and Libraris" 
-echo "Copyrigt r 2020-2021 KickPi-OS "
+toilet "KickOS" --metal
+echo "KickOS ROM Operating System and Libraris" 
+echo "Copyrigt r 2020-2021 KickOS"
 echo "All Rights Reserved. "
 echo "1.>  "
 echo "Type'd; to boot into Kick-OS Workbench"
