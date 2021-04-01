@@ -1,21 +1,10 @@
-# KickPi-OS
+# KickOS
 
 
 
-KickPi-OS is aimed at Amiga friends who want to revive the Amiga experience on a Raspberry Pi.
-The focus of KickPi-OS is easy handling and Workbench like "Look and feel" :-)
+KickOS is aimed at Amiga friends who want to revive the Amiga experience on a Raspberry Pi.
+The focus of KickOS is easy handling and Workbench like "Look and feel" :-)
 
-Software that is installed and pre-configured:
-
-Amiberry, ClassicWB, Amiga Forever, PiKiss, Retropie ...
-* For licensing reasons, the Workbench files and Kickstart Rom files are not included!
-
-
-#Requirements:
-
-- Raspberry Pi OS 32 bit (recommended)
-- Raspberry Pi OS 64 bit (limited,no Retropie,..)
-- Amibian                (unofficial)
 
 
 It is a side project of my Amiga 3000 mini to print yourself. But I think it's also interesting for other Amiga friends.
@@ -33,17 +22,14 @@ bernd.titze@me.com
 
 # Supported hardware:
 
-Since it is based on a Raspberry Pi OS, it should work on all Raspberry Pi's.
-But it sould be 
 
-# But I definitely recommend a Raspberry 4 or Pi400
+
 
 Please note that the 64 bit version also works, but not all functions are available here.
 
 # Preparation:
 
-Install Raspberry Pi OS using Raspberry Pi Imager
-https://www.raspberrypi.org/software/
+
 
 Optional for Amiga Forever owners:
 - Format a USB stick ( FAT32, Volume Label "AMIGA" )
@@ -53,7 +39,7 @@ Optional for Amiga Forever owners:
 # Installation:
 On the raspberry you open a terminal window and type following commands:
 
-git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
+git clone --depth=1 https://github.com/Jodels2002/KickOS
 
 sudo chmod -R 777 KickPi-OS
 
@@ -73,14 +59,12 @@ See also: https://retropie.org.uk/docs/First-Installation/
 # Used 3rd party tools:
 
 
-Amiberry:
-https://github.com/midwan/amiberry
+
 
 RetroPie
 https://github.com/RetroPie
 
-PiKiss
-https://github.com/jmcerrejon/PiKISS
+
 
 
 Source of Game:
