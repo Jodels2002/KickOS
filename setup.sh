@@ -1,5 +1,5 @@
 #!/bin/bash
-# Assign >NIL:  Install KickPi-OS
+# Assign >NIL:  Install KickOS
 # Assign >NIL:  B.Titze 2021
 #******************************************** #startup-sequence  :-) ************* ********************************************
 
@@ -38,8 +38,6 @@ if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
 	
 sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
 cp  /home/$USER/KickOS/scripts/bashrc /home/$USER/.bashrc
-sudo raspi-config nonint get_config_var gpu_mem_256 /boot/config.txt
-sudo raspi-config nonint do_boot_behaviour B2
-sudo raspi-config nonint get_ssh
+
 sudo chmod -R 777 /home/$USER/Amiga   
 sudo reboot
