@@ -255,7 +255,7 @@ fi
       if [ ! -f /home/$USER/FS-UAE.zip ]; then
       clear
       toilet "KickOS" --metal
-      cd ~
+      cd /home/$USER/Documents/FS-UAE/
       cp -rf /home/$USER/KickOS/Amiga/FS-UAE.zip /home/$USER/Documents/
       unzip -u ./FS-UAE.zip
       rm ./FS-UAE.zip
@@ -277,7 +277,7 @@ fi
       echo "  Configure ClassicWB_P96_v28 ...     " 
       echo " "
       echo " "
-      
+      cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
       wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
       unzip -u ./ClassicWB_P96_v28.zip
       else 
@@ -303,6 +303,7 @@ fi
       echo "  Configure ClassicWB_68K_v28 ...     " 
       echo " "
       echo " "
+      cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip -u ./ClassicWB_68K_v28.zip
     
@@ -382,6 +383,7 @@ KickOS_Addons() {
       echo "  Configure ClassicWB_UAE_v28 ...   " 
       echo " "
       echo " "
+      cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip -u ./ClassicWB_UAE_v28.zip
       
@@ -395,6 +397,8 @@ KickOS_Addons() {
       echo "  Configure ClassicWB_OS39_v28 ...   KickOS full  " 
       echo " "
       echo " "
+      cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
+      
       wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       unzip -u ./ClassicWB_OS39_v28.zip
       else 
