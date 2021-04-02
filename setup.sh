@@ -39,6 +39,6 @@ if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
 sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
 cp  /home/$USER/KickOS/scripts/bashrc /home/$USER/.bashrc
 sudo raspi-config nonint do_boot_behaviour B2
-sudo raspi-config nonint get_ssh
-sudo chmod -R 777 /home/$USER/Amiga   
+
+ 
 sudo reboot
