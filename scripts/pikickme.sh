@@ -556,7 +556,7 @@ echo " "
       cp  /home/$USER/KickOS/scripts/.bashrc /home/$USER/.bashrc
       sudo rm -rf ~/.local/share/Trash/
       sudo rm -rf ~/.cache/
-      sudo rm -rf ~/.config/chromium/
+      #sudo rm -rf ~/.config/chromium/
       sudo rm -rf ~/KickOS
       sudo rm -rf ~/amigafonts/
       sudo apt-get -y autoremove
@@ -570,4 +570,4 @@ echo " "
 clear
 toilet "KickOS" --metal
 
-startx
+#startx
