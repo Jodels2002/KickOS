@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# --- Configuration settings start here ---
+
+# Location of FS-UAE Launcher.sqlite file
+database="$HOME/Documents/FS-UAE/Data/Databases/Launcher.sqlite"
+
+# Location of Amiga folder in EmulationStation. Ignore trailing /
+amiga="$HOME/RetroPie/roms/amiga"
+
+# ----- Code starts here -----
+
+# Remove any existing .fs-uae files
+rm -f $amiga/*.fs-uae
+
+# Connect to the FS-UAE database
+sqlite3 "$database" "select name,year,uuid from 'game' where have=4" | while read line ;
+do
+  # Extract the game name, year and UUID
+  name=`echo $line | cut -d"|" -f1`
+  year=`echo $line | cut -d"|" -f2`
+  uuid=`echo $line | cut -d"|" -f3`
+
+  # Tell the user what we've found
+  echo "Found: $name ($year)"
+
+  # Create a valid filename based on the game name 
+  file=`echo $name | sed -e 's/[^a-z0-9\._\-\&\']/ /gi' | tr -s ' '`
+  file="$file ($year).fs-uae"
+
+  # Create a file with that name containing the UUID for the game
+  echo -n "$uuid" > "$amiga/$file"
+done
+Copy the code below and 
