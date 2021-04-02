@@ -204,7 +204,7 @@ fi
      
   
 
-      
+   
    
        cp -rf ~/KickOS/.data/.config/ /home/$USER/
        cp -rf ~/KickOS/.data/.local/ /home/$USER/  
@@ -232,6 +232,7 @@ fi
        sudo apt install -y libopenal-dev libpng-dev libsdl2-dev libsdl2-ttf-dev libtool libxi-dev 
        sudo apt install -y libxtst-dev zip zlib1g-dev
       
+     
       
  
 
@@ -243,19 +244,21 @@ fi
      
      
       Configure_Amiga() {
-       
+      cd
+      mkdir /home/$USER/Documents/FS-UAE/
+      mkdir /home/$USER/FS-UAE/Configurations/
              
-      cd ~/Amiga
-      mkdir /home/$USER/Amiga/conf/ 
+      cd /home/$USER/Documents/FS-UAE/
+
       
            
-      if [ ! -f /home/$USER/Amiga.zip ]; then
+      if [ ! -f /home/$USER/FS-UAE.zip ]; then
       clear
       toilet "KickOS" --metal
       cd ~
-      cp -rf /home/$USER/KickOS/Amiga/Amiga.zip /home/$USER
-      unzip -u ./Amiga.zip
-      rm ./Amiga.zip
+      cp -rf /home/$USER/KickOS/Amiga/FS-UAE.zip /home/$USER/Documents/
+      unzip -u ./FS-UAE.zip
+      rm ./FS-UAE.zip
       
       
       else 
@@ -263,10 +266,10 @@ fi
       toilet "KickOS" --metal
       fi
       
-      cd /home/$USER/Amiga/hdf
+      cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
       
       
-      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_P96_v28.zip ]; then
+      if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/ClassicWB_P96_v28.zip" ]; then
       clear
       toilet "KickOS" --metal
       echo " "
@@ -283,7 +286,7 @@ fi
       fi
       
           
-      if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
+      if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/ClassicWB_68K_v28.zip" ]; then
       clear
       toilet "KickOS" --metal
       echo " "
@@ -305,7 +308,7 @@ fi
     
       fi
       
-      if [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
+      if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/workbench-311.hdf" ]; then
       clear
       toilet "KickOS" --metal
       echo " "
@@ -316,21 +319,19 @@ fi
       
       fi
   
-  if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
+  if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/AROS/AROS.boot" ]; then
       cd /home/$USER/KickOS/Amiga
       unzip -u /home/$USER/KickOS/Amiga/AROS.zip
-      mkdir /home/$USER/Amiga/dir/AROS/
-     cp -rf /home/$USER/KickOS/Amiga/AROS/* /home/$USER/Amiga/dir/AROS/
+      mkdir "/home/$USER/Documents/FS-UAE/Hard Drives/AROS/"
+     cp -rf /home/$USER/KickOS/Amiga/AROS/* "/home/$USER/Documents/FS-UAE/Hard Drives/AROS/"
   fi
-      cd /home/$USER/Amiga/hdf
       
-      cd ~/Amiga
       clear
       toilet "KickOS" --metal
    
       echo " "
       echo " "
-      if [ ! -f /home/$USER/Amiga/Amiga_roms.zip ]; then
+      if [ ! -f "/home/$USER/Documents/FS-UAE/Kickstarts/Amiga_roms.zip" ]; then
       clear
       toilet -F gay NOTE!
       echo " "
@@ -344,10 +345,9 @@ fi
       echo "The structure in the "Amiga" folder is adapted to Amiga Forever."
       echo " "
       echo " "
-      sleep 5s
+      cd /home/$USER/Documents/FS-UAE/Kickstarts/
       wget https://misapuntesde.com/res/Amiga_roms.zip
-      cp -rf ./Amiga_roms.zip /home/$USER/Amiga/kickstarts/
-      cd ~/Amiga/kickstarts/
+     
       unzip -u ./Amiga_roms.zip
       rm ./Amiga_roms.zip
       fi
@@ -358,15 +358,7 @@ fi
      cp -rf /home/$USER/KickOS/Amiga/conf/* /home/$USER/Amiga/conf/ 
      
 
-      if    [ ! -d "/home/amibian/Amiga/Emulators/amiberry/conf/" ]; then
-	  clear
-	else
-	  cp -rf /home/$USER/KickOS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
-	  cp -rf /home/$USER/KickOS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
-          cp -rf /home/$USER/KickOS/Amiga/conf/* /home/$USER/Documents/FS-UAE/Configurations/
-	  
-          fi
-	  
+      
       
       sudo chmod -R 777 /home/$USER/Amiga
     }    
@@ -378,10 +370,10 @@ fi
 
 KickOS_Addons() {
 
-if [ "$(getconf LONG_BIT)" == "64" ]; then
- cd /home/$USER/Amiga/hdf
+
+ cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
       
-      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
+      if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/ClassicWB_UAE_v28.zip" ]; then
       clear
       toilet "KickOS" --metal
       toilet "full 64bit" --metal
@@ -392,12 +384,9 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip -u ./ClassicWB_UAE_v28.zip
-      else 
-      clear
       
-      fi
       
-      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
+      if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/ClassicWB_OS39_v28.zip" ]; then
       clear
       toilet "KickOS" --metal
       toilet "full 64bit" --metal
@@ -414,61 +403,7 @@ if [ "$(getconf LONG_BIT)" == "64" ]; then
       fi
       
  
-else 
-      cd /home/$USER/Amiga/hdf
-      
-      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
-      clear
-      toilet "KickOS" --metal
-      toilet "full" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_UAE_v28 ...   " 
-      echo " "
-      echo " "
-      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      unzip -u ./ClassicWB_UAE_v28.zip
-      else 
-      clear
-      
-      fi
-      
-      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
-      clear
-      toilet "KickOS" --metal
-      toilet "full" --metal
-      echo " "
-      echo " "
-      echo "  ClassicWB_OS39_v28 ...   " 
-      echo " "
-      echo " "
-      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
-      unzip -u ./ClassicWB_OS39_v28.zip
-      else 
-      clear
-      fi
-     clear
-      toilet "KickOS" --metal
-      toilet "full" --metal
-      echo " "
-      echo " "
-      echo "Commodore Vice" 
-      echo " "
-      echo " "
-      cd
-      if [ ! -f /home/$USER/games/vice-3.4-bin-rpi.tar.gz ]; then
-      
-      mkdir $HOME/games
-      cd $HOME/games
-      wget https://misapuntesde.com/rpi_share/vice-3.4-bin-rpi.tar.gz
-      tar xzf  ./vice-3.4-bin-rpi.tar.gz
-      #rm ./vice-3.4-bin-rpi.tar.gz
-     
-      else 
-      clear
-            fi
-      
-    
+
     
       cd ~/KickOS/config/
       
