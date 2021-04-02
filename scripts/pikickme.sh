@@ -244,21 +244,19 @@ fi
      
      
       Configure_Amiga() {
-      cd
-      mkdir /home/$USER/Documents/FS-UAE/
-      mkdir /home/$USER/Documents/FS-UAE/Configurations/
-             
+     
+      cd /home/$USER/Documents/
+      cp -rf /home/$USER/KickOS/Amiga/FS-UAE.zip /home/$USER/Documents/
+      unzip -u ./FS-UAE.zip      
       cd /home/$USER/Documents/FS-UAE/
 
       
            
-      if [ ! -f /home/$USER/FS-UAE.zip ]; then
+    
       clear
       toilet "KickOS" --metal
-      cd /home/$USER/Documents/FS-UAE/
-      cp -rf /home/$USER/KickOS/Amiga/FS-UAE.zip /home/$USER/Documents/
-      unzip -u ./FS-UAE.zip
-      rm ./FS-UAE.zip
+      
+    
       
       
       else 
