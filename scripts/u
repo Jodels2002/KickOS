@@ -1,18 +1,16 @@
 #!/bin/bash
-# Install KickPi-OS
+# Install KickOS
 # B.Titze 2021
-# KickPi-OS updater
+# KickOS updater
 
-sudo rm -rf /home/$USER/KickPi-OS/
-sudo rm -rf /home/$USER/.KickPi-OS/
+sudo rm -rf /home/$USER/KickOS/
+sudo rm -rf /home/$USER/.KickOS/
 cd
 #sudo apt -y upgrade
-git clone --depth=1 https://github.com/Jodels2002/KickPi-OS.git
+git clone --depth=1 https://github.com/Jodels2002/KickOS.git
 
-sudo chmod -R 777 KickPi-OS
+sudo chmod -R 777 KickOS
 
-/home/$USER/KickPi-OS/scripts/pikickme.sh
+/home/$USER/KickOS/scripts/pikickme.sh
 
-    © 2021 GitHub, Inc.
-    Terms
-    Privacy
+   
