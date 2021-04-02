@@ -221,32 +221,21 @@ fi
  KickOS_FS-UAE() {
   
       
- 
- if [ "$(getconf LONG_BIT)" == "64" ]; then
+
  
        echo " "
        echo " "
        echo "  ... here comes FS-UAE 64 bit :-) "
        
-       
+       sudo apt install -y fs-uae fs-uae-arcade fs-uae-launcher fs-uae-netplay-server
+       sudo apt install -y autoconf automake build-essential gettext libfreetype6-dev libglew-dev libglib2.0-dev libjpeg-dev libmpeg2-4-dev 
+       sudo apt install -y libopenal-dev libpng-dev libsdl2-dev libsdl2-ttf-dev libtool libxi-dev 
+       sudo apt install -y libxtst-dev zip zlib1g-dev
       
       
  
-       
-    else
-    
-       echo " ... here comes FS-UAE 32 bit   :-)"
-      
-   
-	  
-       
-       
-      
-    fi
-    
-    
-   
-}
+
+ }
 
 
 #***************************************** # Configure Amiga *********************************************
