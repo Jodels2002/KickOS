@@ -246,7 +246,7 @@ fi
       Configure_Amiga() {
       cd
       mkdir /home/$USER/Documents/FS-UAE/
-      mkdir /home/$USER/FS-UAE/Configurations/
+      mkdir /home/$USER/Documents/FS-UAE/Configurations/
              
       cd /home/$USER/Documents/FS-UAE/
 
