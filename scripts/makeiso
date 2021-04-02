@@ -1,0 +1,6 @@
+sudo apt install -y live-build
+cd
+mkdir iso
+cd iso
+lb config
+sudo lb build 2>&1 | tee build.log
