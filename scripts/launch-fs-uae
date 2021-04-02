@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Get the UUID from the first line of the file
+uuid=`head -n 1 "$1"`
+
+# Launch FS-UAE Launcher passing it this UUID
+fs-uae-launcher "$uuid"
