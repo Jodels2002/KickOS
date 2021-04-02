@@ -569,5 +569,21 @@ echo " "
 
 clear
 toilet "KickOS" --metal
-
+cd
+clear
+toilet "KickOS" --metal
+echo "KickOS ROM Operating System and Libraris" 
+echo "Copyrigt r 2020-2021 KickOS"
+echo "All Rights Reserved. "
+echo "1.>  "
+echo "Type'd; to boot into KickOS Workbench"
+echo "1.>  "
+echo "1.>  "
+echo "1.>  ( a ) Start Amiga                 (Amiberry)" 
+echo "1.>  ( d ) KickPi Desktop                        " 
+echo "1.>  ( e ) Emulationstation             (RetroPi)" 
+echo "1.>  ( r ) Emulationstation Setup                "
+echo "1.>  ( u ) KickPi-OS Update                      " 
+echo "1.>  ( m ) Kick-OS Menu                          " 
+echo "1.>  "
 #startx
