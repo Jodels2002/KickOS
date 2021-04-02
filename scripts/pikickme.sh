@@ -255,14 +255,7 @@ fi
     
       clear
       toilet "KickOS" --metal
-      
-    
-      
-      
-      else 
-      clear
-      toilet "KickOS" --metal
-      fi
+
       
       cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
       
