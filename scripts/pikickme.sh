@@ -397,7 +397,21 @@ KickOS_Addons() {
       
       fi
       
- 
+        if [ ! -d /home/$USER/games/vice/ ]; then
+	clear
+     	toilet "KickPi-OS" --metal
+	echo "Vice64"
+     	echo " "
+     	echo " "
+     	sudo apt install -y autoconf automake build-essential byacc dos2unix flex libavcodec-dev libavformat-dev libgtk2.0-cil-dev libgtkglext1-dev libmp3lame-dev libmpg123-dev libpcap-dev libpulse-dev libreadline-dev libswscale-dev libvte-dev libxaw7-dev subversion yasm libgtk3.0-cil-dev xa65 libsdl2-dev libsdl2-image-dev libgtk-3-dev libglew-dev
+     	cd /home/$USER/KickPi-OS/.pac/
+      	unzip -u  /home/$USER/KickPi-OS/.pac/vice.zip
+      	unzip -u  /home/$USER/KickPi-OS/.pac/Vice2.zip
+      	sudo mkdir /home/$USER/games
+      	sudo cp -rf /home/$USER/KickPi-OS/.pac/vice /home/$USER/games
+      	sudo cp -rf /home/$USER/KickPi-OS/.pac/Vice2/* /home/$USER/games/vice/
+   
+      	sudo chmod -R 777 /home/$USER/games/vice/
 
     
       cd ~/KickOS/config/
