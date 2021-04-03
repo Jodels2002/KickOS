@@ -418,7 +418,7 @@ KickOS_Addons() {
       	sudo cp -rf /home/$USER/KickPi-OS/.pac/Vice2/* /home/$USER/games/vice/
    
       	sudo chmod -R 777 /home/$USER/games/vice/
-
+       fi
     
       cd ~/KickOS/config/
       
