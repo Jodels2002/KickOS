@@ -208,7 +208,7 @@ fi
       unzip -u  /home/$USER/KickOS/.pac/.worker.zip
       cp -rf /home/$USER/KickOS/.pac/.worker /home/$USER/
       sudo chmod -R 777 /home/$USER/.worker/
-  
+      fi
 
    
    
