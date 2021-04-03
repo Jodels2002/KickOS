@@ -201,7 +201,13 @@ if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
 fi
   
   
-     
+      if [ ! -f /home/$USER/.worker/.worker.zip ]; then
+      # First installation
+      clear
+      cd /home/$USER/KickOS/.pac/
+      unzip -u  /home/$USER/KickOS/.pac/.worker.zip
+      cp -rf /home/$USER/KickOS/.pac/.worker /home/$USER/
+      sudo chmod -R 777 /home/$USER/.worker/
   
 
    
