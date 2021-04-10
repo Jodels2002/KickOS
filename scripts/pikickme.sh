@@ -244,13 +244,181 @@ fi
  
 
  }
+ 
+ 
+ #***************************************** # Install FS-UAE  *********************************************
+#****************************************************************************************************************
+     
+     
+ KickOS_WinUAE() {
+  
+      
+
+ 
+       echo " "
+       echo " "
+       echo "  ... here comes FS-UAE 64 bit :-) "
+       
+       sudo dpkg --add-architecture i386 && sudo apt update
+sudo apt -y install \
+      wine \
+wine msiexec /i ~/Desktop/A      wine32 \
+      wine64 \
+      libwine \
+      libwine:i386 \
+      fonts-wine
+      
+      
+      cd
+      #wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400_x64.msi
+      #wine msiexec /i ~/Desktop/AmigaForever.msi
+      #wine msiexec /i InstallWinUAE4400_x64.msi
+      
+     
+      
+ 
+
+ }
+
+Configure_Amiga()
+{
+       if [ ! -f /home/$USER/Amiga/Kickstarts/Amiga_roms.zip  ]; then
+       mkdir /home/$USER/Amiga/ 
+       mkdir /home/$USER/Amiga/conf/ 
+       mkdir /home/$USER/Amiga/Kickstarts/ 
+       cd /home/$USER/Amiga/Kickstarts/ 
+       
+       wget https://misapuntesde.com/res/Amiga_roms.zip
+     
+      unzip -u ./Amiga_roms.zip
+      #rm ./Amiga_roms.zipr
+       fi
+      cd ~/Amiga
+      
+      
+           
+      if [ ! -f /home/$USER/Amiga.zip ]; then
+      clear
+      toilet "KickPi-OS" --metal
+      cd ~
+      cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
+      unzip -u ./Amiga.zip
+      rm ./Amiga.zip
+      
+      
+      else 
+      echo " "
+      fi
+      
+      cd /home/$USER/Amiga/hdf
+      
+      
+      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_P96_v28.zip ]; then
+      clear
+      toilet "KickPi-OS" --metal
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_P96_v28 ...     " 
+      echo " "
+      echo " "
+      
+      wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
+      unzip -u ./ClassicWB_P96_v28.zip
+      else 
+      clear
+      toilet "KickPi-OS" --metal
+      fi
+      
+          
+      if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
+      clear
+      toilet "KickPi-OS" --metal
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_68K_v28 ...     " 
+      echo " "
+      echo " "
+      wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
+      unzip -u ./ClassicWB_68K_v28.zip
+      else 
+      echo " "
+         
+      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
+      #clear
+      #toilet "KickPi-OS" --metal
+      #toilet "full 64bit" --metal
+      #echo " "
+      #echo " "
+      #echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
+      #echo " "
+      #echo " "
+      #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
+      #unzip -u ./ClassicWB_OS39_v28.zip
+      #else 
+      #echo " "
+      
+      #fi
+      
+ 
+#else 
+    
+      fi
+      
+      #if [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
+      #clear
+      #toilet "KickPi-OS" --metal
+      #echo " "
+      #echo " "
+      #echo "  Configure AmigaForever workbench-311 ...     " 
+      #echo " "
+      #echo " "
+      
+     # fi
+     if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/AROS/AROS.boot" ]; then
+      cd /home/$USER/KickOS/Amiga
+      unzip -u /home/$USER/KickOS/Amiga/AROS.zip
+      mkdir "/home/$USER/Amiga/hdf/AROS/"
+     cp -rf /home/$USER/KickOS/Amiga/AROS/* "/home/$USER/Amiga/hdf/AROS/"
+  fi
+  
+  
+      cd /home/$USER/Amiga/hdf
+      
+      cd ~/Amiga
+      clear
+      toilet "KickPi-OS" --metal
+   
+      echo " "
+      echo " "
+      
+        
+
+      
+      
+     cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
+     
+
+      if    [ ! -d "/home/amibian/Amiga/Emulators/amiberry/conf/" ]; then
+	  clear
+	else
+	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
+	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
+          cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Documents/FS-UAE/Configurations/
+	  
+          fi
+	  
+      
+      sudo chmod -R 777 /home/$USER/Amiga
+    }    
+   
+
 
 
 #***************************************** # Configure Amiga *********************************************
 #****************************************************************************************************************
      
      
-      Configure_Amiga() {
+      Configure_Amiga_fs-uae() {
      
       cd /home/$USER/Documents/
       cp -rf /home/$USER/KickOS/Amiga/FS-UAE.zip /home/$USER/Documents/
@@ -540,6 +708,7 @@ case $CHOICE in
             KickOS_Desktop
             KickOS_FS-UAE
             Configure_Amiga
+	    #Configure_Amiga_fs-uae
             KickOS_Addons
             KickOS_Retropie
             KickOS_Update
