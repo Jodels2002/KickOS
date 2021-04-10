@@ -246,7 +246,7 @@ fi
  }
  
  
- #***************************************** # Install FS-UAE  *********************************************
+ #***************************************** # Install WinUAE  *********************************************
 #****************************************************************************************************************
      
      
@@ -279,10 +279,27 @@ wine msiexec /i ~/Desktop/A      wine32 \
  
 
  }
-
+ 
+#***************************************** # Configure Amiga FS-UAE *********************************************
+#****************************************************************************************************************
 Configure_Amiga()
 {
        if [ ! -f /home/$USER/Amiga/Kickstarts/Amiga_roms.zip  ]; then
+       
+      clear
+      toilet -F gay NOTE!
+      echo " "
+      echo " "
+      echo "The roms and workbench files are under copyrigt! "
+      echo " "
+      echo " "
+      echo "Use only if you have the original!  "
+      echo " (Original Amiga, Amiga Forever,..."
+      echo " "
+      echo "The structure in the "Amiga" folder is adapted to Amiga Forever."
+      echo " "
+      echo " "
+       
        mkdir /home/$USER/Amiga/ 
        mkdir /home/$USER/Amiga/conf/ 
        mkdir /home/$USER/Amiga/Kickstarts/ 
@@ -395,17 +412,16 @@ Configure_Amiga()
 
       
       
-     cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
+     #cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
      
 
-      if    [ ! -d "/home/amibian/Amiga/Emulators/amiberry/conf/" ]; then
-	  clear
-	else
-	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
-	  cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry-dev/conf/
-          cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Documents/FS-UAE/Configurations/
+      #if    [ ! -d "/home/amibian/Amiga/Emulators/amiberry/conf/" ]; then
+	  #clear
+	#else
+	  #cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
+	  #
 	  
-          fi
+          #fi
 	  
       
       sudo chmod -R 777 /home/$USER/Amiga
@@ -414,7 +430,7 @@ Configure_Amiga()
 
 
 
-#***************************************** # Configure Amiga *********************************************
+#***************************************** # Configure Amiga FS-UAE *********************************************
 #****************************************************************************************************************
      
      
@@ -703,21 +719,23 @@ toilet "KickOS" --metal
 case $CHOICE in
         
         1)
-            #Poser
+            
             KickOS_Tools
             KickOS_Desktop
             KickOS_FS-UAE
+	    KickOS_WinUAE
             Configure_Amiga
-	    #Configure_Amiga_fs-uae
-            KickOS_Addons
+	    KickOS_Addons
             KickOS_Retropie
             KickOS_Update
        ;;
         2)
-            #Poser
+           
             KickOS_Tools
             KickOS_Desktop
             KickOS_FS-UAE
+	    KickOS_WinUAE
+	    Configure_Amiga_fs-uae
             Configure_Amiga
             KickOS_Addons
             KickOS_Retropie
