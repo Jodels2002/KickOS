@@ -257,7 +257,7 @@ fi
  
        echo " "
        echo " "
-       echo "  ... here comes FS-UAE 64 bit :-) "
+       echo "  ... here comes WinUAE 64 bit :-) "
        
        sudo dpkg --add-architecture i386 && sudo apt update
 sudo apt -y install \
