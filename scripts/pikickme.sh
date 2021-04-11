@@ -256,7 +256,7 @@ fi
   if [ ! -f /home/$USER/Amiga/InstallWinUAE4400_x64.msi  ]; then 
        mkdir /home/$USER/Amiga/ 
        mkdir /home/$USER/Amiga/conf/ 
-       mkdir /home/$USER/Amiga/Kickstarts/ 
+       mkdir /home/$USER/Amiga/kickstarts/ 
 
  
        echo " "
@@ -293,7 +293,7 @@ fi
 Configure_Amiga() {
 
        
-       if [ ! -f /home/$USER/Amiga/Kickstarts/Amiga_roms.zip  ]; then
+       if [ ! -f /home/$USER/Amiga/kickstarts/Amiga_roms.zip  ]; then
        
       clear
       toilet -F gay NOTE!
@@ -310,13 +310,13 @@ Configure_Amiga() {
       echo " "
        
        
-       cd /home/$USER/Amiga/Kickstarts/ 
+       cd /home/$USER/Amiga/kickstarts/ 
        
        wget https://misapuntesde.com/res/Amiga_roms.zip
      
       unzip -u ./Amiga_roms.zip
       #rm ./Amiga_roms.zip
-      sudo rm /home/$USER/Amiga/Kickstarts/kick20.rom
+      sudo rm /home/$USER/Amiga/kickstarts/kick20.rom
        fi
       
       cd /home/$USER/Amiga/ 
@@ -368,38 +368,45 @@ Configure_Amiga() {
       unzip -u ./ClassicWB_68K_v28.zip
       else 
       echo " "
-         
-      #if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip ]; then
-      #clear
-      #toilet "KickPi-OS" --metal
-      #toilet "full 64bit" --metal
-      #echo " "
-      #echo " "
-      #echo "  Configure ClassicWB_OS39_v28 ...   KickPi-OS full  " 
-      #echo " "
-      #echo " "
-      #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
-      #unzip -u ./ClassicWB_OS39_v28.zip
-      #else 
-      #echo " "
+      fi 
       
-      #fi
+      cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
       
- 
-#else 
-    
+      if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip" ]; then
+      clear
+      toilet "KickOS" --metal
+      toilet "full 64bit" --metal
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_UAE_v28 ...   " 
+      echo " "
+      echo " "
+      cd "/home/$USER/Amiga/hdf/"
+      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      unzip -u ./ClassicWB_UAE_v28.zip
+      
+      
+      if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip" ]; then
+      clear
+      toilet "KickOS" --metal
+      toilet "full 64bit" --metal
+      echo " "
+      echo " "
+      echo "  Configure ClassicWB_OS39_v28 ...   KickOS full  " 
+      echo " "
+      echo " "
+      cd "/home/$USER/Amiga/hdf/"
+      
+      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
+      unzip -u ./ClassicWB_OS39_v28.zip
+      else 
+      clear
+      
       fi
       
-      #if [ ! -f "/home/$USER/Amiga/hdf/workbench-311.hdf" ]; then
-      #clear
-      #toilet "KickPi-OS" --metal
-      #echo " "
-      #echo " "
-      #echo "  Configure AmigaForever workbench-311 ...     " 
-      #echo " "
-      #echo " "
       
-     # fi
+      
+      
      if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
       cd /home/$USER/KickOS/Amiga
       unzip -u /home/$USER/KickOS/Amiga/AROS.zip
@@ -416,22 +423,10 @@ Configure_Amiga() {
    
       echo " "
       echo " "
-      
-        
 
       
-      
-     #cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/$USER/Amiga/conf/ 
-     
-
-      #if    [ ! -d "/home/amibian/Amiga/Emulators/amiberry/conf/" ]; then
-	  #clear
-	#else
-	  #cp -rf /home/$USER/KickPi-OS/Amiga/conf/* /home/amibian/Amiga/Emulators/amiberry/conf/
-	  #
-	  
-          #fi
-	  
+     cp -rf /home/$USER/KickOS/Amiga/conf/* /home/$USER/Amiga/conf/ 
+    
       
       sudo chmod -R 777 /home/$USER/Amiga
     }    
@@ -562,40 +557,6 @@ Configure_Amiga() {
 
 KickOS_Addons() {
 
-
- cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
-      
-      if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/ClassicWB_UAE_v28.zip" ]; then
-      clear
-      toilet "KickOS" --metal
-      toilet "full 64bit" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_UAE_v28 ...   " 
-      echo " "
-      echo " "
-      cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
-      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      unzip -u ./ClassicWB_UAE_v28.zip
-      
-      
-      if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/ClassicWB_OS39_v28.zip" ]; then
-      clear
-      toilet "KickOS" --metal
-      toilet "full 64bit" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_OS39_v28 ...   KickOS full  " 
-      echo " "
-      echo " "
-      cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
-      
-      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
-      unzip -u ./ClassicWB_OS39_v28.zip
-      else 
-      clear
-      
-      fi
       
    
     
