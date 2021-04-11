@@ -283,6 +283,11 @@ wine msiexec /i ~/Desktop/A
 #***************************************** # Configure Amiga FS-UAE *********************************************
 #****************************************************************************************************************
 Configure_Amiga()
+
+       mkdir /home/$USER/Amiga/ 
+       mkdir /home/$USER/Amiga/conf/ 
+       mkdir /home/$USER/Amiga/Kickstarts/ 
+
 {
        if [ ! -f /home/$USER/Amiga/Kickstarts/Amiga_roms.zip  ]; then
        
@@ -300,9 +305,7 @@ Configure_Amiga()
       echo " "
       echo " "
        
-       mkdir /home/$USER/Amiga/ 
-       mkdir /home/$USER/Amiga/conf/ 
-       mkdir /home/$USER/Amiga/Kickstarts/ 
+       
        cd /home/$USER/Amiga/Kickstarts/ 
        
        wget https://misapuntesde.com/res/Amiga_roms.zip
@@ -310,7 +313,8 @@ Configure_Amiga()
       unzip -u ./Amiga_roms.zip
       #rm ./Amiga_roms.zipr
        fi
-      cd ~/Amiga
+      
+      cd /home/$USER/Amiga/ 
       
       
            
