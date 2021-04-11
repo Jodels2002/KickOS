@@ -315,32 +315,33 @@ Configure_Amiga() {
        wget https://misapuntesde.com/res/Amiga_roms.zip
      
       unzip -u ./Amiga_roms.zip
-      #rm ./Amiga_roms.zipr
+      #rm ./Amiga_roms.zip
+      sudo rm /home/$USER/Amiga/Kickstarts/kick20.rom
        fi
       
       cd /home/$USER/Amiga/ 
       
       
+      cd ~/Amiga
+      mkdir /home/$USER/Amiga/conf/ 
+      
            
-      if [ ! -f /home/$USER/Amiga.zip ]; then
+      
       clear
-      toilet "KickPi-OS" --metal
+      toilet "KickOS" --metal
       cd ~
-      cp -rf /home/$USER/KickPi-OS/Amiga/Amiga.zip /home/$USER
+      cp -rf /home/$USER/KickOS/Amiga/Amiga.zip /home/$USER
       unzip -u ./Amiga.zip
       rm ./Amiga.zip
       
-      
-      else 
-      echo " "
-      fi
+    
       
       cd /home/$USER/Amiga/hdf
       
       
       if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_P96_v28.zip ]; then
       clear
-      toilet "KickPi-OS" --metal
+      toilet "KickOS" --metal
       echo " "
       echo " "
       echo "  Configure ClassicWB_P96_v28 ...     " 
@@ -351,13 +352,13 @@ Configure_Amiga() {
       unzip -u ./ClassicWB_P96_v28.zip
       else 
       clear
-      toilet "KickPi-OS" --metal
+      toilet "KickOS" --metal
       fi
       
           
       if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
       clear
-      toilet "KickPi-OS" --metal
+      toilet "KickOS" --metal
       echo " "
       echo " "
       echo "  Configure ClassicWB_68K_v28 ...     " 
@@ -399,12 +400,12 @@ Configure_Amiga() {
       #echo " "
       
      # fi
-     if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/AROS/AROS.boot" ]; then
+     if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
       cd /home/$USER/KickOS/Amiga
       unzip -u /home/$USER/KickOS/Amiga/AROS.zip
-      mkdir "/home/$USER/Amiga/hdf/AROS/"
-     cp -rf /home/$USER/KickOS/Amiga/AROS/* "/home/$USER/Amiga/hdf/AROS/"
-  fi
+      mkdir /home/$USER/Amiga/dir/AROS/
+      cp -rf /home/$USER/KickOS/Amiga/AROS/* /home/$USER/Amiga/dir/AROS/
+     fi
   
   
       cd /home/$USER/Amiga/hdf
