@@ -56,9 +56,9 @@ BACKTITLE="KickOS"
 TITLE="Witch KickOS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Install KickOS full  (recommended)           (ca. 50 min)"
-	 2 "Install KickOS full + Office Suite           (ca. 70 min)"
-         3 "Install KickOS light                         (ca. 30 min)")
+OPTIONS=(1 "Install KickOS full  (recommended)            (ca. 30 min)"
+	 2 "Install KickOS full + Office Suite            (ca. 40 min)"
+         3 "Install KickOS full + Office Suite + RetroPie (ca. 70 min)")
         
 
 CHOICE=$(dialog --clear \
@@ -211,7 +211,9 @@ fi
       sudo chmod -R 777 /home/$USER/.worker/
       fi
 
-   
+       mkdir /home/$USER/Amiga/ 
+       mkdir /home/$USER/Amiga/conf/ 
+       mkdir /home/$USER/Amiga/Kickstarts/ 
    
        cp -rf ~/KickOS/.data/.config/ /home/$USER/
        cp -rf ~/KickOS/.data/.local/ /home/$USER/  
@@ -251,32 +253,38 @@ fi
      
      
  KickOS_WinUAE() {
-  
-      
+  if [ ! -f /home/$USER/Amiga/InstallWinUAE4400_x64.msi  ]; then 
+       mkdir /home/$USER/Amiga/ 
+       mkdir /home/$USER/Amiga/conf/ 
+       mkdir /home/$USER/Amiga/Kickstarts/ 
 
  
        echo " "
        echo " "
        echo "  ... here comes WinUAE 64 bit :-) "
-       
+      
        sudo dpkg --add-architecture i386 && sudo apt update
-sudo apt -y install wine
-wine msiexec /i ~/Desktop/A      
-      wine32 \
-      wine64 \
-      libwine \
-      libwine:i386 \
-      fonts-wine
+       sudo dpkg --add-architecture i386
+       wget -nc https://dl.winehq.org/wine-builds/winehq.key
+       sudo apt-key add winehq.key
+       sudo apt -y install wine
+       sudo apt -y install winetricks
+
+      #wine msiexec /i ~/Desktop/A      
+      #wine32 \
+      #wine64 \
+      #libwine \
+      #libwine:i386 \
+      #fonts-wine
       
       
-      cd
+      cd /home/$USER/Amiga/ 
       wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400_x64.msi
-      #wine msiexec /i ~/Desktop/AmigaForever.msi
       wine msiexec /i InstallWinUAE4400_x64.msi /qn
+      #wine msiexec /i ~/Desktop/AmigaForever.msi
       
-     
+      fi
       
- 
 
  }
  
@@ -284,9 +292,7 @@ wine msiexec /i ~/Desktop/A
 #****************************************************************************************************************
 Configure_Amiga() {
 
-       mkdir /home/$USER/Amiga/ 
-       mkdir /home/$USER/Amiga/conf/ 
-       mkdir /home/$USER/Amiga/Kickstarts/ 
+       
        if [ ! -f /home/$USER/Amiga/Kickstarts/Amiga_roms.zip  ]; then
        
       clear
@@ -728,7 +734,7 @@ case $CHOICE in
 	    KickOS_WinUAE
             Configure_Amiga
 	    KickOS_Addons
-            KickOS_Retropie
+            #KickOS_Retropie
             KickOS_Update
        ;;
         2)
@@ -740,18 +746,22 @@ case $CHOICE in
 	    Configure_Amiga_fs-uae
             Configure_Amiga
             KickOS_Addons
-            KickOS_Retropie
+            #KickOS_Retropie
             KickOS_Office 
 	    KickOS_Update
        ;;
         
         3)
            
-            #Poser
             KickOS_Tools
             KickOS_Desktop
             KickOS_FS-UAE
+	    KickOS_WinUAE
+	    Configure_Amiga_fs-uae
             Configure_Amiga
+            KickOS_Addons
+            KickOS_Retropie
+            KickOS_Office 
 	    KickOS_Update
            
        ;;
