@@ -293,7 +293,7 @@ fi
 Configure_Amiga() {
 
        
-       if [ ! -f /home/$USER/Amiga/kickstarts/Amiga_roms.zip  ]; then
+    if [ ! -f /home/$USER/Amiga/kickstarts/Amiga_roms.zip  ]; then
        
       clear
       toilet -F gay NOTE!
@@ -317,7 +317,7 @@ Configure_Amiga() {
       unzip -u ./Amiga_roms.zip
       #rm ./Amiga_roms.zip
       sudo rm /home/$USER/Amiga/kickstarts/kick20.rom
-       fi
+    fi
       
       cd /home/$USER/Amiga/ 
       
@@ -339,7 +339,7 @@ Configure_Amiga() {
       cd /home/$USER/Amiga/hdf
       
       
-      if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_P96_v28.zip ]; then
+    if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_P96_v28.zip ]; then
       clear
       toilet "KickOS" --metal
       echo " "
@@ -350,13 +350,13 @@ Configure_Amiga() {
       
       wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
       unzip -u ./ClassicWB_P96_v28.zip
-      else 
+    else 
       clear
       toilet "KickOS" --metal
-      fi
+    fi
       
           
-      if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
+    if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
       clear
       toilet "KickOS" --metal
       echo " "
@@ -366,13 +366,13 @@ Configure_Amiga() {
       echo " "
       wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip -u ./ClassicWB_68K_v28.zip
-      else 
+    else 
       echo " "
-      fi 
+    fi 
       
       cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
       
-      if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip" ]; then
+    if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip" ]; then
       clear
       toilet "KickOS" --metal
       toilet "full 64bit" --metal
@@ -384,9 +384,12 @@ Configure_Amiga() {
       cd "/home/$USER/Amiga/hdf/"
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip -u ./ClassicWB_UAE_v28.zip
+    else 
+      clear
       
+    fi
       
-      if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip" ]; then
+    if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip" ]; then
       clear
       toilet "KickOS" --metal
       toilet "full 64bit" --metal
@@ -399,22 +402,21 @@ Configure_Amiga() {
       
       wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       unzip -u ./ClassicWB_OS39_v28.zip
-      else 
+    else 
       clear
       
-      fi
+    fi
       
       
       
       
-     if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
-      cd /home/$USER/KickOS/Amiga
-      unzip -u /home/$USER/KickOS/Amiga/AROS.zip
-      mkdir /home/$USER/Amiga/dir/AROS/
-      cp -rf /home/$USER/KickOS/Amiga/AROS/* /home/$USER/Amiga/dir/AROS/
-     fi
-  
-  
+    if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
+       cd /home/$USER/KickOS/Amiga
+       unzip -u /home/$USER/KickOS/Amiga/AROS.zip
+       mkdir /home/$USER/Amiga/dir/AROS/
+       cp -rf /home/$USER/KickOS/Amiga/AROS/* /home/$USER/Amiga/dir/AROS/
+    fi
+
       cd /home/$USER/Amiga/hdf
       
       cd ~/Amiga
@@ -425,11 +427,10 @@ Configure_Amiga() {
       echo " "
 
       
-     cp -rf /home/$USER/KickOS/Amiga/conf/* /home/$USER/Amiga/conf/ 
-    
-      
-      sudo chmod -R 777 /home/$USER/Amiga
-    }    
+     cp -rf /home/$USER/KickOS/Amiga/conf/* /home/$USER/Amiga/conf/
+     sudo chmod -R 777 /home/$USER/Amiga
+  
+  }    
    
 
 
