@@ -580,7 +580,7 @@ KickOS_Addons() {
      
       
       
- fi
+
       if [ ! -d /home/$USER/games/vice/ ]; then
 	clear
      	toilet "KickPi-OS" --metal
