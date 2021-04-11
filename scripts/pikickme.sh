@@ -282,13 +282,11 @@ wine msiexec /i ~/Desktop/A
  
 #***************************************** # Configure Amiga FS-UAE *********************************************
 #****************************************************************************************************************
-Configure_Amiga()
+Configure_Amiga() {
 
        mkdir /home/$USER/Amiga/ 
        mkdir /home/$USER/Amiga/conf/ 
        mkdir /home/$USER/Amiga/Kickstarts/ 
-
-{
        if [ ! -f /home/$USER/Amiga/Kickstarts/Amiga_roms.zip  ]; then
        
       clear
