@@ -253,7 +253,7 @@ fi
      
      
  KickOS_WinUAE() {
-  if [ ! -f /home/$USER/Amiga/InstallWinUAE4400_x64.msi  ]; then 
+  if [ ! -f /home/$USER/Amiga/InstallWinUAE4400.msi  ]; then 
        mkdir /home/$USER/Amiga/ 
        mkdir /home/$USER/Amiga/conf/ 
        mkdir /home/$USER/Amiga/kickstarts/ 
@@ -279,7 +279,8 @@ fi
       
       
       cd /home/$USER/Amiga/ 
-      wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400_x64.msi
+      #wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400_x64.msi
+      wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400.msi
       wine msiexec /i InstallWinUAE4400_x64.msi /qn
       #wine msiexec /i ~/Desktop/AmigaForever.msi
       
@@ -428,6 +429,7 @@ Configure_Amiga() {
 
       
      cp -rf /home/$USER/KickOS/Amiga/conf/* /home/$USER/Amiga/conf/
+     cp -rf /home/$USER/KickOS/Amiga/conf/* /home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Configurations/
      sudo chmod -R 777 /home/$USER/Amiga
   
   }    
