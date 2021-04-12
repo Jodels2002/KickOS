@@ -2,7 +2,7 @@
 
 
 
-KickOS is aimed at Amiga friends who want to revive the Amiga experience on a Raspberry Pi.
+KickOS is aimed at Amiga friends who want to revive the Amiga experience for Desktop.
 The focus of KickOS is easy handling and Workbench like "Look and feel" :-)
 
 
@@ -20,12 +20,6 @@ A warm welcome
 Greetings Bernd
 bernd.titze@me.com
 
-# Supported hardware:
-
-
-
-
-Please note that the 64 bit version also works, but not all functions are available here.
 
 # Preparation:
 
@@ -37,7 +31,15 @@ Optional for Amiga Forever owners:
 -> "AMIGA/Shared/*here are your AmigaForever files*"
 
 # Installation:
-On the raspberry you open a terminal window and type following commands:
+
+You can install KickOS as your computer’s main operating system, run it in a virtual machine, or create a USB stick or other medium from which you can run it when required.
+
+
+https://downloads.raspberrypi.org/rpd_x86/images/rpd_x86-2021-01-12/2021-01-11-raspios-buster-i386.iso
+
+Setup Pi OS and open a terminal window and type following commands:
+
+
 
 git clone --depth=1 https://github.com/Jodels2002/KickOS.git
 
