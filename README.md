@@ -23,19 +23,21 @@ bernd.titze@me.com
 
 # Preparation:
 
+You can install KickOS as your computer’s main operating system, run it in a virtual machine, or create a USB stick or other medium from which you can run it when required.
 
 
-Optional for Amiga Forever owners:
+https://downloads.raspberrypi.org/rpd_x86/images/rpd_x86-2021-01-12/2021-01-11-raspios-buster-i386.iso
+
+
+# Optional for Amiga Forever owners:
+
 - Format a USB stick ( FAT32, Volume Label "AMIGA" )
 - Copy the "Shared" folder from the Amiga Forever installation
 -> "AMIGA/Shared/*here are your AmigaForever files*"
 
 # Installation:
 
-You can install KickOS as your computer’s main operating system, run it in a virtual machine, or create a USB stick or other medium from which you can run it when required.
 
-
-https://downloads.raspberrypi.org/rpd_x86/images/rpd_x86-2021-01-12/2021-01-11-raspios-buster-i386.iso
 
 Setup Pi OS and open a terminal window and type following commands:
 
@@ -48,6 +50,9 @@ sudo chmod -R 777 KickOS
 cd KickOS
 
 ./setup.sh
+
+
+
 
 # Update
 
