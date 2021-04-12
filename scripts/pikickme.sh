@@ -281,7 +281,7 @@ fi
       cd /home/$USER/Amiga/ 
       #wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400_x64.msi
       wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400.msi
-      wine msiexec /i InstallWinUAE4400_x64.msi /qn
+      wine msiexec /i InstallWinUAE4400.msi /qn
       #wine msiexec /i ~/Desktop/AmigaForever.msi
       
       fi
