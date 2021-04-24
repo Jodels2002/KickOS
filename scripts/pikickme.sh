@@ -600,6 +600,31 @@ KickOS_Addons() {
    
       	sudo chmod -R 777 /home/$USER/games/vice/
        fi
+       
+       if [ ! -d /home/$USER/.config/GIMP/ ]; then
+#
+      clear
+      # Update is running
+      sudo apt install -y gimp 
+       clear
+       toilet "KickOS" --metal
+       toilet -F gay PhotoGimp
+       
+       curl -L "https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip" -o /home/$USER/KickPi-OS/PhotoGIMP.zip && unzip /home/$USER/KickPi-OS/PhotoGIMP.zip -d /home/$USER/KickPi-OS/ 
+       sudo cp -R /home/$USER/KickPi-OS/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/* ~/.config
+       echo " PhotoGimp by Diolinux installed..."
+      
+      sleep 3s
+      else 
+      
+      echo " Gimp is already installed..."
+      
+     
+          
+      fi     
+       
+       
+       
 }
 
      
