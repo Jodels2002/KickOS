@@ -429,7 +429,8 @@ Configure_Amiga() {
 
       
      cp -rf /home/$USER/KickOS/Amiga/conf/* /home/$USER/Amiga/conf/
-     cp -rf /home/$USER/KickOS/Amiga/conf/* /home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Configurations/
+     cp -rf /home/$USER/Amiga/conf/* "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Configurations/"
+     cp -rf /home/$USER/KickOS/Amiga/Amiga.zip /home/$USER
      sudo chmod -R 777 /home/$USER/Amiga
   
   }    
