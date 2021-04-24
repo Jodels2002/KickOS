@@ -610,8 +610,8 @@ KickOS_Addons() {
        toilet "KickOS" --metal
        toilet -F gay PhotoGimp
        
-       curl -L "https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip" -o /home/$USER/KickPi-OS/PhotoGIMP.zip && unzip /home/$USER/KickPi-OS/PhotoGIMP.zip -d /home/$USER/KickPi-OS/ 
-       sudo cp -R /home/$USER/KickPi-OS/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/* ~/.config
+       curl -L "https://github.com/Diolinux/PhotoGIMP/releases/download/1.0/PhotoGIMP.by.Diolinux.v2020.for.Flatpak.zip" -o /home/$USER/KickOS/PhotoGIMP.zip && unzip /home/$USER/KickOS/PhotoGIMP.zip -d /home/$USER/KickOS/ 
+       sudo cp -R /home/$USER/KickOS/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/* ~/.config
        echo " PhotoGimp by Diolinux installed..."
       
       sleep 3s
@@ -734,7 +734,7 @@ case $CHOICE in
             KickOS_Desktop
             KickOS_FS-UAE
 	    KickOS_WinUAE
-	    #Configure_Amiga_fs-uae
+	    Configure_Amiga_fs-uae
             Configure_Amiga
             KickOS_Addons
             #KickOS_Retropie
@@ -748,7 +748,7 @@ case $CHOICE in
             KickOS_Desktop
             KickOS_FS-UAE
 	    KickOS_WinUAE
-	    #Configure_Amiga_fs-uae
+	    Configure_Amiga_fs-uae
             Configure_Amiga
             KickOS_Addons
             KickOS_Retropie
