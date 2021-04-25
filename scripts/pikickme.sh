@@ -165,6 +165,7 @@ KickOS_Office() {
       sudo rm -rf /home/$USER/.cache
       cd /home/$USER/KickOS/
       cp -rf ~/KickOS/config/Desktop/* /home/$USER/Desktop/
+      cd
 
       sudo unzip ~/KickOS/.pac/.data.pac
 
