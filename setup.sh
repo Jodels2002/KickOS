@@ -36,7 +36,14 @@ if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
 	  
           fi
 
-
+if [ ! -f /media/cdrom0/VBoxLinuxAdditions.run]; then
+      echo "VirtualBox...."
+      cd /media/cdrom0/
+      sudo ./VBoxLinuxAdditions.run
+     
+      echo " "
+      echo " "
+      fi
 	
 sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
 cp  /home/$USER/KickOS/scripts/bashrc /home/$USER/.bashrc
