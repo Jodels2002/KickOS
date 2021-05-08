@@ -9,7 +9,7 @@
 
 #***********************************************  #Preinstall stuff *****************************************
 #*************************************************************************************************************
-sudo apt-mark hold lxpanel
+
  
 sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
@@ -88,6 +88,7 @@ KickOS_Update() {
       echo "Installing KickOS Update System ..."
       echo " "
       echo " "
+      
       sudo apt-get -y upgrade
 
 }
@@ -724,18 +725,17 @@ toilet "KickOS" --metal
 case $CHOICE in
         
         1)
-            
+            KickOS_Update
             KickOS_Tools
             KickOS_Desktop
             KickOS_FS-UAE
 	    KickOS_WinUAE
             Configure_Amiga
 	    KickOS_Addons
-            #KickOS_Retropie
-            KickOS_Update
+            
        ;;
         2)
-           
+            KickOS_Update
             KickOS_Tools
             KickOS_Desktop
             KickOS_FS-UAE
@@ -745,11 +745,11 @@ case $CHOICE in
             KickOS_Addons
             #KickOS_Retropie
             KickOS_Office 
-	    KickOS_Update
+	    
        ;;
         
         3)
-           
+            KickOS_Update
             KickOS_Tools
             KickOS_Desktop
             KickOS_FS-UAE
@@ -759,7 +759,7 @@ case $CHOICE in
             KickOS_Addons
             KickOS_Retropie
             KickOS_Office 
-	    KickOS_Update
+	   
            
        ;;
                   
