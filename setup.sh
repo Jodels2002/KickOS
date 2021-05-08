@@ -38,8 +38,15 @@ if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
 
 if [ ! -f /media/cdrom0/VBoxLinuxAdditions.run]; then
       echo "VirtualBox...."
-      cd /media/cdrom0/
+      
+      cp -rf /media/cdrom0/* /home/$USER/Documents/
+      /home/$USER/Documents/
+      sudo chmod -R 777 /home/$USER/Documents/
       sudo ./VBoxLinuxAdditions.run
+     
+      echo " "
+      echo " "
+fi
      
       echo " "
       echo " "
