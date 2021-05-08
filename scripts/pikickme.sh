@@ -168,7 +168,9 @@ KickOS_Office() {
       cd
 
       sudo unzip ~/KickOS/.pac/.data.pac
-
+      cp -rf ~/KickOS/.data/.config/ /home/$USER/
+      cp -rf ~/KickOS/.data/.local/ /home/$USER/  
+     
       sudo chmod -R 777 /home/$USER/KickOS
       sudo chmod -R 777 /home/$USER/.local
       sudo chmod -R 777 /home/$USER/.config
@@ -185,20 +187,25 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
       sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
       
       else 
-      clear
+      echo " "
 fi     
 
-if [ ! -f /usr/share/themes/Amiga3.x_hidpi/ ]; then
+if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       cd /home/$USER/KickOS
       git clone --depth=1 https://github.com/x64k/amitk
+      clear
+      toilet "KickPi-OS" --metal
       sudo cp -rf /home/$USER/KickOS/amitk /usr/share/themes
+      
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+      clear
+      toilet "KickPi-OS" --metal
       sudo cp -rf /home/$USER/KickOS/amigaos_xfwm4_themes/* /usr/share/themes/
       sudo rm -rf /usr/share/themes/Default/xfwm4/
       sudo cp -rf /usr/share/themes/Amiga3.x_hidpi/* /usr/share/themes/Default/xfwm4/
       sudo cp -rf /home/$USER/KickOS/config/rpd-wallpaper/* /usr/share/backgrounds/
       else 
-      clear
+      echo " "
       
 fi
   
@@ -216,9 +223,7 @@ fi
        mkdir /home/$USER/Amiga/conf/ 
        mkdir /home/$USER/Amiga/Kickstarts/ 
    
-       cp -rf ~/KickOS/.data/.config/ /home/$USER/
-       cp -rf ~/KickOS/.data/.local/ /home/$USER/  
-       sudo raspi-config nonint do_boot_behaviour B4
+       
        
 
 }
@@ -800,3 +805,4 @@ echo "1.>  ( u ) KickPi-OS Update                      "
 echo "1.>  ( m ) Kick-OS Menu                          " 
 echo "1.>  "
 #startx
+ sudo raspi-config nonint do_boot_behaviour B4
