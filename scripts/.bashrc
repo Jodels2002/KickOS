@@ -114,7 +114,7 @@ fi
 cd
 clear
 toilet "KickOS" --metal
-echo "KickOS ROM Operating System and Libraris" 
+echo "KickOS ROM Operating System and Libraries" 
 echo "Copyrigt r 2020-2021 KickOS"
 echo "All Rights Reserved. "
 echo "1.>  "
