@@ -13,7 +13,7 @@ echo " "
       #sudo apt -y upgrade
       sudo apt-get install -y toilet dialog mc zip unzip
       whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
-
+sudo chmod -R 777 /home/$USER/KickOS/
 if [ ! -f /home/$USER/.backup/.bashrc ]; then
       echo "Backup Settings...."
       mkdir /home/$USER/.backup/
@@ -36,17 +36,17 @@ if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
 	  
           fi
 
-if [ ! -f /media/cdrom0/VBoxLinuxAdditions.run]; then
+
       echo "VirtualBox...."
       
-      cp -rf /media/cdrom0/* /home/$USER/Documents/
-      /home/$USER/Documents/
-      sudo chmod -R 777 /home/$USER/Documents/
+     
+      cd /home/$USER/KickOS/.pac/
+       
       sudo ./VBoxLinuxAdditions.run
      
       echo " "
       echo " "
-fi
+
      
       echo " "
       echo " "
