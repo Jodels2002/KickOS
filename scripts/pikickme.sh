@@ -88,7 +88,7 @@ KickOS_Update() {
       echo "Installing KickOS Update System ..."
       echo " "
       echo " "
-      
+      sudo dpkg --configure -a
       sudo apt-get -y upgrade
 
 }
