@@ -50,7 +50,7 @@ if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
      
       echo " "
       echo " "
-      fi
+     
 	
 sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
 cp  /home/$USER/KickOS/scripts/bashrc /home/$USER/.bashrc
