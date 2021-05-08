@@ -56,9 +56,9 @@ BACKTITLE="KickOS"
 TITLE="Witch KickOS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Install KickOS full  (recommended)            (ca. 30 min)"
-	 2 "Install KickOS full + Office Suite            (ca. 40 min)"
-         3 "Install KickOS full + Office Suite + RetroPie (ca. 70 min)")
+OPTIONS=(1 "Install KickOS light                          (ca. 30 min)"
+	 2 "Install KickOS full                           (ca. 40 min)"
+         3 "Install KickOS full + RetroPie                (ca. 70 min)")
         
 
 CHOICE=$(dialog --clear \
@@ -168,9 +168,9 @@ KickOS_Office() {
       cp -rf ~/KickOS/config/Desktop/* /home/$USER/Desktop/
       cd
 
-      sudo unzip ~/KickOS/.pac/.data.pac
-      cp -rf ~/KickOS/.data/.config/ /home/$USER/
-      cp -rf ~/KickOS/.data/.local/ /home/$USER/  
+      sudo unzip ~/KickOS/.pac/.data.zip
+      sudo cp -rf /home/$USER/KickOS/.data/.config/ /home/$USER/
+      sudo cp -rf /home/$USER/KickOS/.data/.local/ /home/$USER/  
      
       sudo chmod -R 777 /home/$USER/KickOS
       sudo chmod -R 777 /home/$USER/.local
@@ -178,7 +178,7 @@ KickOS_Office() {
       sudo rm -rf /home/$USER/.cache
       # Fresh install Amiga Desktop
     
-if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
+
 
       cd /usr/share/icons/
       
@@ -187,9 +187,7 @@ if [ ! -f /usr/share/icons/AMIGAOSLINUX.zip ]; then
       sudo rm -rf /usr/share/icons/default
       sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
       
-      else 
-      echo " "
-fi     
+    
 
 if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       cd /home/$USER/KickOS
@@ -738,13 +736,14 @@ case $CHOICE in
             KickOS_Update
             KickOS_Tools
             KickOS_Desktop
+	    KickOS_Office 
             KickOS_FS-UAE
 	    KickOS_WinUAE
-	    #Configure_Amiga_fs-uae
+	    Configure_Amiga_fs-uae
             Configure_Amiga
             KickOS_Addons
             #KickOS_Retropie
-            KickOS_Office 
+            
 	    
        ;;
         
@@ -752,13 +751,14 @@ case $CHOICE in
             KickOS_Update
             KickOS_Tools
             KickOS_Desktop
+	    KickOS_Office 
             KickOS_FS-UAE
 	    KickOS_WinUAE
-	    #Configure_Amiga_fs-uae
+	    Configure_Amiga_fs-uae
             Configure_Amiga
             KickOS_Addons
             KickOS_Retropie
-            KickOS_Office 
+            
 	   
            
        ;;
@@ -790,9 +790,9 @@ toilet "KickOS" --metal
 cd
 clear
 toilet "KickOS" --metal
-echo "KickOS ROM Operating System and Libraris" 
+echo "KickOS ROM Operating System and Libraries" 
 echo "Copyrigt r 2020-2021 KickOS"
-echo "All Rights Reserved. "
+echo "All Rights Reserved. B.Titze"
 echo "1.>  "
 echo "Type'd; to boot into KickOS Workbench"
 echo "1.>  "
@@ -805,4 +805,4 @@ echo "1.>  ( u ) KickPi-OS Update                      "
 echo "1.>  ( m ) Kick-OS Menu                          " 
 echo "1.>  "
 #startx
- sudo raspi-config nonint do_boot_behaviour B4
+ sudo raspi-config nonint do_boot_behaviour B2
