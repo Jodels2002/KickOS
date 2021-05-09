@@ -1,6 +1,12 @@
 
 sudo dpkg --add-architecture i386 && sudo apt update
-sudo apt -y install wine 
+
+sudo apt -y install gnupg2 software-properties-common
+wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
+sudo apt-add-repository https://dl.winehq.org/wine-builds/debian/
+sudo apt update
+sudo apt install --install-recommends winehq-stable
+#sudo apt -y install wine 
 wine msiexec /i ~/Desktop/A      wine32 \
       wine64 \
       libwine \
