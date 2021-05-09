@@ -1,4 +1,4 @@
-#!/bin/bash
+ffic#!/bin/bash
 #***********************************************  #KickOS install script  ***********************************
 # Install KickOS
 # B.Titze 2021
@@ -139,10 +139,11 @@ KickOS_Office() {
 
       echo " "
       echo " "
-      echo "            Time to update:)              "
+      echo "            Some Office Tools:)              "
       echo " "
-      sudo apt install -y imagemagick krita-l10n gparted synaptic
-      sudo apt install -y thunderbird gimp inkscape libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
+      #sudo apt install -y imagemagick krita-l10n gparted synaptic
+      
+      #sudo apt install -y libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
 
 }
 
@@ -176,7 +177,7 @@ KickOS_Office() {
       sudo rm -rf /home/$USER/.cache
       # Fresh install Amiga Desktop
     
-
+if [ ! -d /usr/share/icons/AMIGAOSLINUX/ ]; then
 
       cd /usr/share/icons/
       
@@ -184,8 +185,10 @@ KickOS_Office() {
       sudo unzip -u  /usr/share/icons/AMIGAOSLINUX.zip
       sudo rm -rf /usr/share/icons/default
       sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/default/
-      
-    
+      sudo rm -rf /usr/share/icons/Adwaita
+      sudo cp -rf /usr/share/icons/AMIGAOSLINUX/ /usr/share/icons/Adwaita/
+      sudo chmod -R 777 /usr/share/icons/
+ fi   
 
 if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       cd /home/$USER/KickOS
@@ -608,6 +611,7 @@ KickOS_Addons() {
 #
       clear
       # Update is running
+      
       sudo apt install -y gimp 
        clear
        toilet "KickOS" --metal
