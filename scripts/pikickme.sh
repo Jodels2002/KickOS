@@ -159,14 +159,12 @@ KickOS_Office() {
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
       
-      sudo chmod -R 777 /home/$USER/KickOS
-      sudo chmod -R 777 /home/$USER/.config
-      sudo chmod -R 777 ~/.local
+      
       sudo cp -rf ~/KickOS ~/.KickOS
       sudo rm -rf /home/$USER/.cache
       cd /home/$USER/KickOS/
       cp -rf ~/KickOS/config/Desktop/* /home/$USER/Desktop/
-      cd
+      
 
       sudo unzip ~/KickOS/.pac/.data.zip
       sudo cp -rf /home/$USER/KickOS/.data/.config/ /home/$USER/
@@ -736,7 +734,7 @@ case $CHOICE in
             KickOS_Update
             KickOS_Tools
             KickOS_Desktop
-	    KickOS_Office 
+	    #KickOS_Office 
             KickOS_FS-UAE
 	    KickOS_WinUAE
 	    Configure_Amiga_fs-uae
@@ -751,7 +749,7 @@ case $CHOICE in
             KickOS_Update
             KickOS_Tools
             KickOS_Desktop
-	    KickOS_Office 
+	    #KickOS_Office 
             KickOS_FS-UAE
 	    KickOS_WinUAE
 	    Configure_Amiga_fs-uae
