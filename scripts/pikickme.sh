@@ -269,19 +269,19 @@ fi
        echo " "
        echo "  ... here comes WinUAE 64 bit :-) "
       
-       sudo dpkg --add-architecture i386 && sudo apt update
+      
        sudo dpkg --add-architecture i386
        wget -nc https://dl.winehq.org/wine-builds/winehq.key
        sudo apt-key add winehq.key
        sudo apt -y install wine
        sudo apt -y install winetricks
 
-      #wine msiexec /i ~/Desktop/A      
-      #wine32 \
-      #wine64 \
-      #libwine \
-      #libwine:i386 \
-      #fonts-wine
+      wine msiexec /i ~/Desktop/A      
+      wine32 \
+      wine64 \
+      libwine \
+      libwine:i386 \
+      fonts-wine
       
       
       cd /home/$USER/Amiga/ 
