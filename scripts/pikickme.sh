@@ -578,8 +578,10 @@ KickOS_Addons() {
       toilet "full" --metal
       echo " "
       echo " "
-      ./retro-term.sh
       
+      if [ ! -d /home/$USER/sc/cool-retro-term/ ]; then
+      ./retro-term.sh
+      fi
       
       clear
       toilet "KickOS" --metal
