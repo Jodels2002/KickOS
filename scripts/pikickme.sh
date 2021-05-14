@@ -15,7 +15,20 @@ sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
 sudo apt-get install -y toilet dialog 
 clear
-   
+
+if ! grep -q '# Amiga RAM Drive' /etc/fstab ; then
+   sudo rm -rf /home/$USER/tmp
+   sudo mkdir /home/$USER/tmp
+   sudo chmod -R 777 /home/pi/tmp
+   sudo chmod -R 777 /etc/fstab
+   sudo  echo '# Amiga RAM Drive' >> /etc/fstab
+   echo 'tmpfs /home/$USER/tmp tmpfs nodev,nosuid,size=1024M 0 0 ' >> /etc/fstab
+   else
+   clear
+   echo "Amiga RAM Disk always installed..." 
+fi  
+
+sudo mount -a   
       
       echo ""
       echo " "
