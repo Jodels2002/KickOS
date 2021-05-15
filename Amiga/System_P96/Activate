@@ -1,6 +1,6 @@
 ;ClassicWB Activate Install 68K LITE FULL ADV ADVSP P96 UAE
 
-cd DF0:C
+cd Workbench3.0:C
 ;AntiClick
 copy AddBuffers SYS:C CLONE
 copy AddDataTypes SYS:C CLONE
@@ -53,7 +53,7 @@ copy Version SYS:C CLONE
 copy Wait SYS:C CLONE
 copy Which SYS:C CLONE
 
-cd DF0:Classes/DataTypes
+cd Workbench3.0:Classes/DataTypes
 copy 8svx.datatype SYS:Classes/Datatypes CLONE
 copy amigaguide.datatype SYS:Classes/Datatypes CLONE
 ;copy anim.datatype SYS:Classes/Datatypes CLONE WB30
@@ -65,12 +65,12 @@ copy amigaguide.datatype SYS:Classes/Datatypes CLONE
 ;copy sound.datatype SYS:Classes/Datatypes CLONE WB30
 ;copy text.datatype SYS:Classes/Datatypes CLONE WB30
 
-cd DF0:Classes/Gadgets
+cd Workbench3.0:Classes/Gadgets
 copy colorwheel.gadget SYS:Classes/Gadgets CLONE
 copy gradientslider.gadget SYS:Classes/Gadgets CLONE
 ;copy tapedeck.gadget SYS:Classes/Gadgets CLONE WB30
 
-cd DF0:Devs
+cd Workbench3.0:Devs
 copy clipboard.device SYS:Devs CLONE
 copy mfm.device SYS:Devs CLONE
 copy parallel.device SYS:Devs CLONE
@@ -79,7 +79,7 @@ copy printer.device SYS:Devs CLONE
 copy serial.device SYS:Devs CLONE
 copy system-configuration SYS:Devs CLONE
 
-cd DF0:Devs/DataTypes
+cd Workbench3.0:Devs/DataTypes
 copy 8SVX SYS:Devs/DataTypes CLONE
 copy AmigaGuide SYS:Devs/DataTypes CLONE
 ;copy ANIM SYS:Devs/DataTypes CLONE WB30
@@ -87,18 +87,18 @@ copy AmigaGuide SYS:Devs/DataTypes CLONE
 copy FTXT SYS:Devs/DataTypes CLONE
 copy ILBM SYS:Devs/DataTypes CLONE
 
-cd DF0:Devs/DOSDrivers
+cd Workbench3.0:Devs/DOSDrivers
 copy PIPE SYS:Devs/DOSDrivers CLONE
 
-cd DF0:Devs/Printers
+cd Workbench3.0:Devs/Printers
 copy Generic SYS:Devs/Printers CLONE
 
-cd DF0:L
+cd Workbench3.0:L
 copy aux-handler SYS:L CLONE
 copy port-handler SYS:L CLONE
 copy queue-handler SYS:L CLONE
 
-cd DF0:Libs
+cd Workbench3.0:Libs
 copy amigaguide.library SYS:Libs CLONE
 ;asl.library
 copy bullet.library SYS:Libs CLONE
@@ -118,7 +118,7 @@ copy rexxsupport.library SYS:Libs CLONE
 copy rexxsyslib.library SYS:Libs CLONE
 copy version.library SYS:Libs CLONE
 
-cd DF0:Rexxc
+cd Workbench3.0:Rexxc
 copy HI SYS:Rexxc CLONE
 copy RX SYS:Rexxc CLONE
 copy RXC SYS:Rexxc CLONE
@@ -130,7 +130,7 @@ copy TE SYS:Rexxc CLONE
 copy TS SYS:Rexxc CLONE
 copy WaitForPort SYS:Rexxc CLONE
 
-cd DF0:S
+cd Workbench3.0:S
 copy DPat SYS:S CLONE
 copy Ed-startup SYS:S CLONE
 ;Shell-Startup
@@ -138,7 +138,7 @@ copy SPat SYS:S CLONE
 copy PCD SYS:S CLONE
 ;Startup-Sequence
 
-cd DF0:System
+cd Workbench3.0:System
 copy CLI SYS:System CLONE
 copy DiskCopy SYS:System CLONE
 copy FixFonts SYS:System CLONE
@@ -146,7 +146,7 @@ copy Format SYS:System CLONE
 copy NoFastMem SYS:System CLONE
 copy RexxMast SYS:System CLONE
 
-cd DF0:Utilities
+cd Workbench3.0:Utilities
 copy Clock SYS:Utilities CLONE
 copy MultiView SYS:Utilities/More CLONE
 copy MultiView SYS:Utilities CLONE
@@ -154,7 +154,7 @@ copy MultiView SYS:Utilities/AmigaGuide CLONE
 
 ;SPECIAL CIRCUMSTANCES
 
-cd DF0:Utilities
+cd Workbench3.0:Utilities
 copy MultiView SYS:C/MultiView CLONE
 copy MultiView SYS:C/AmigaGuide CLONE
 copy MultiView SYS:C/More CLONE
