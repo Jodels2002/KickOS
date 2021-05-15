@@ -18,7 +18,7 @@ echo "The copyright holders can be found at:"
 echo "http://amigaforever.com"
 echo "-------------------------------------------"
 echo ""
-WAIT 4
+
 
 resident SYS:C/cls PURE
 
