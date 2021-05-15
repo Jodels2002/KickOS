@@ -18,21 +18,11 @@ echo "The copyright holders can be found at:"
 echo "http://amigaforever.com"
 echo "-------------------------------------------"
 echo ""
-ask "Press RETURN to continue."
+WAIT 4
 
 resident SYS:C/cls PURE
 
 cls
-echo ""
-echo "Welcome to Bloodwych's ClassicWB Install!"
-echo ""
-echo "In a moment you will be prompted to insert your Workbench"
-echo "disk. It's used to verify and extract copyright files."
-echo ""
-echo "Please note that the ClassicWB installs cannot operate"
-echo "without these files."
-echo ""
-ask "Press RETURN to begin."
 
 cls
 
@@ -40,101 +30,25 @@ LAB START
 
 cls
 
-echo ""
-echo "Please Insert a Workbench 3.0 disk into DF0:"
-echo ""
-echo "A Workbench 3.1 disk can also be used, allowing"
-echo "the option of a complete upgrade to 3.1"
-echo ""
-ask "Insert disk and press RETURN to continue."
 
-IF NOT EXISTS DF0:C/Which
-  SKIP FAIL
-ENDIF
 
-IF NOT EXISTS DF0:C/Assign
-  SKIP FAIL
-ELSE
-  DF0:C/Assign >NIL: T: RAM:
-ENDIF
 
-IF "`DF0:C/Which DF0:`" EQ "Workbench3.0:"
-  echo ""
-  echo ""
-  echo "Disk appears to be Workbench 3.0 release."
-  echo ""
-  echo "Checking version number..." NOLINE
-  DF0:C/Wait 1
-  DF0:C/Version >NIL: DF0:Libs/version.library 39 FILE
-  IF WARN
-    echo "INCORRECT!"
-    SKIP SECOND
-  ELSE
-    echo "CORRECT!"
-    SKIP PASS
-  ENDIF
-  echo ""
-ENDIF
 
-LAB SECOND
 
-IF "`DF0:C/Which DF0:`" EQ "Workbench3.1:"
-  echo ""
-  echo ""
-  echo "Disk appears to be Workbench 3.1 release."
-  echo ""
-  echo "Checking version number..." NOLINE
-  DF0:C/Wait 1
-  DF0:C/Version >NIL: DF0:Libs/version.library 39 FILE
-  IF WARN
-    echo "INCORRECT!"
-    SKIP FAIL
-  ELSE
-    echo "CORRECT!"
-    SKIP INSTALL
-  ENDIF
-  echo ""
-ENDIF
 
-LAB FAIL
 
-echo ""
-echo ""
-echo "This is not a valid Workbench disk"
-echo ""
-echo "...installation cannot continue."
-echo ""
-ask "Press RETURN to try again."
-SKIP START BACK
 
 LAB INSTALL
 
 stack 16384
 failat 21
-DF0:C/AddBuffers >NIL: DF0: 200
-resident DF0:C/Copy PURE
-resident DF0:C/Delete PURE
-resident DF0:C/Execute PURE
-resident DF0:C/Wait PURE
+Workbench3.0:C/AddBuffers >NIL: Workbench3.0: 200
+resident Workbench3.0:C/Copy PURE
+resident Workbench3.0:C/Delete PURE
+resident Workbench3.0:C/Execute PURE
+resident Workbench3.0:C/Wait PURE
 
-echo ""
-echo "Workbench 3.1 detected, launching upgrade options..."
-wait 4
 
-cls
-
-echo ""
-echo "ClassicWB can be completely upgraded to Workbench 3.1"
-echo "if the full set of 3.1 disks are available."
-echo ""
-echo "If not, the current Workbench disk will be used to"
-echo "activate the system, but parts will remain at 3.0"
-echo ""
-ask "Do you want to upgrade to Workbench 3.1?"
-
-IF NOT WARN
-  SKIP PASS
-ELSE
   echo ""
   echo "Valid Workbench disk found!"
   wait 4
@@ -143,22 +57,22 @@ ELSE
 
   echo ""
   echo "Installing ClassicWB..."
-  wait 4
+  
 
   cls
 
   echo ""
   echo "Activating system using Workbench disks, please wait..."
-  wait 4
+  
 
   execute SYS:S/Activate
   cd SYS:
   delete >NIL: SYS:S/Activate
 
   IF EXISTS SYS:C/LoadWB.temp
-    copy DF0:C/LoadWB SYS:C/LoadWB.orig CLONE
+    copy Workbench3.0:C/LoadWB SYS:C/LoadWB.orig CLONE
   ELSE
-    copy DF0:C/LoadWB SYS:C/LoadWB CLONE
+    copy Workbench3.0:C/LoadWB SYS:C/LoadWB CLONE
   ENDIF
 
   copy SYS:T/Science SYS:S CLONE
@@ -170,12 +84,7 @@ ELSE
     rename SYS:C/LoadWB.temp SYS:C/LoadWB
   ENDIF
 
-  execute SYS:S/Workbench3.1
-  execute SYS:S/Extras3.1
-  execute SYS:S/Fonts3.1
-  execute SYS:S/Install3.1
-  execute SYS:S/Locale3.1
-  execute SYS:S/Storage3.1
+ 
   
   delete >NIL: SYS:S/Workbench3.1
   delete >NIL: SYS:S/Extras3.1
@@ -192,11 +101,11 @@ LAB PASS
 
 stack 16384
 failat 21
-DF0:C/AddBuffers >NIL: DF0: 200
-resident DF0:C/Copy PURE
-resident DF0:C/Delete PURE
-resident DF0:C/Execute PURE
-resident DF0:C/Wait PURE
+Workbench3.0:C/AddBuffers >NIL: Workbench3.0: 200
+resident Workbench3.0:C/Copy PURE
+resident Workbench3.0:C/Delete PURE
+resident Workbench3.0:C/Execute PURE
+resident Workbench3.0:C/Wait PURE
 
 echo ""
 echo "Valid Workbench disk found!"
@@ -219,9 +128,9 @@ cd SYS:
 delete >NIL: SYS:S/Activate
 
 IF EXISTS SYS:C/LoadWB.temp
-  copy DF0:C/LoadWB SYS:C/LoadWB.orig CLONE
+  copy Workbench3.0:C/LoadWB SYS:C/LoadWB.orig CLONE
 ELSE
-  copy DF0:C/LoadWB SYS:C/LoadWB CLONE
+  copy Workbench3.0:C/LoadWB SYS:C/LoadWB CLONE
 ENDIF
 
 copy SYS:T/Science SYS:S CLONE
