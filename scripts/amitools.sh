@@ -43,7 +43,12 @@ if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       echo "  Configure System_P96 ...   " 
       mkdir /home/pi/Amiga/dir/System_P96
       xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
-      cp -rf /home/pi/Amiga/dir/WB/* /home/pi/Amiga/dir/System_P96/System/Temp/
+     
+      cp -rf /home/pi/.KickOS/Amiga/Install.zip /home/pi/tmp/
+      cd /home/pi/tmp/
+      unzip -u ./Install.zip
+      cp -rf /home/pi/tmp/Workbench3.1/* /home/pi/Amiga/dir/System_P96/System/
+      
       
       echo " "
       echo " "
