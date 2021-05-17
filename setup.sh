@@ -25,14 +25,14 @@ if [ ! -f /home/$USER/.backup/.bashrc ]; then
       echo " "
       fi
 
-if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
+if    [ ! -d "/media/$USER/AMIGA/Shared/" ]; then
 	  clear
 	else
 	  echo "***  Amiga Forever files found ***"
 	  echo " "
 	  echo "... copy files will take 2-5 min "
           mkdir /home/$USER/Amiga 
-	  cp -rf /media/pi/AMIGA/Shared/* ~/Amiga  
+	  cp -rf /media/$USER/AMIGA/Shared/* ~/Amiga  
 	  
           fi
 
@@ -52,12 +52,12 @@ if    [ ! -d "/media/pi/AMIGA/Shared/" ]; then
       echo " "
       
  if ! grep -q '# Amiga RAM Drive' /etc/fstab ; then
-   sudo rm -rf /home/pi/tmp
-   sudo mkdir /home/pi/tmp
-   sudo chmod -R 777 /home/pi/tmp
+   sudo rm -rf /home/$USER/tmp
+   sudo mkdir /home/$USER/tmp
+   sudo chmod -R 777 /home/$USER/tmp
    sudo chmod -R 777 /etc/fstab
    sudo  echo '# Amiga RAM Drive' >> /etc/fstab
-   echo 'tmpfs /home/pi/tmp tmpfs nodev,nosuid,size=1024M 0 0 ' >> /etc/fstab
+   echo 'tmpfs /home/$USER/tmp tmpfs nodev,nosuid,size=1024M 0 0 ' >> /etc/fstab
    else
    clear
    echo "Amiga RAM Disk always installed..." 
