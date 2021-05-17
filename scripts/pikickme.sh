@@ -19,7 +19,7 @@ clear
 if ! grep -q '# Amiga RAM Drive' /etc/fstab ; then
    sudo rm -rf /home/$USER/tmp
    sudo mkdir /home/$USER/tmp
-   sudo chmod -R 777 /home/pi/tmp
+   sudo chmod -R 777 /home/$USER/tmp
    sudo chmod -R 777 /etc/fstab
    sudo  echo '# Amiga RAM Drive' >> /etc/fstab
    echo 'tmpfs /home/$USER/tmp tmpfs nodev,nosuid,size=1024M 0 0 ' >> /etc/fstab
