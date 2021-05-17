@@ -1,4 +1,18 @@
-https://github.com/guysoft/CustomPiOS
+ edit /etc/default/grub to have the next boot end up in text mode. In summary you will set these parameters:
+
+GRUB_CMDLINE_LINUX_DEFAULT="text"
+GRUB_TERMINAL=console
+After saving changes you need to run:
+
+sudo update-grub
+sudo systemctl enable multi-user.target --force
+sudo systemctl set-default multi-user.target
+Undoing text-mode
+To undo sudo systemctl set-default multi-user.target simply type
+
+sudo systemctl enable graphical.target --force
+sudo systemctl set-default graphical.target 
+
 https://medium.com/platformer-blog/creating-a-custom-raspbian-os-image-for-production-3fcb43ff3630
 wine msiexec /i ~/Downloads/AmigaForever2016Plus.msi
 
