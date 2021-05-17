@@ -156,7 +156,7 @@ KickOS_Office() {
       echo " "
       #sudo apt install -y imagemagick krita-l10n gparted synaptic
       
-      #sudo apt install -y libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
+      sudo apt install -y libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
 
 }
 
@@ -168,7 +168,8 @@ KickOS_Office() {
  
  
   
-      sudo apt purge -y lxde  lxde-common lxde-core
+      sudo apt purge -y lxde*  lxde-common lxde-core
+      sudo apt purge -y cinnamon*
       sudo apt purge -y raspberrypi-ui-mods
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
