@@ -10,7 +10,7 @@ cd
 git clone --depth=1 https://github.com/Jodels2002/KickOS.git
 
 sudo chmod -R 777 KickOS
-cd /home/pi/KickOS/scripts/
+cd /home/$USER/KickOS/scripts/
 ./pikickme.sh
 
    
