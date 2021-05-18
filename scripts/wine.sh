@@ -8,7 +8,7 @@ sudo apt -y install gnupg2 software-properties-common
 wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
 sudo apt-add-repository https://dl.winehq.org/wine-builds/debian/
 sudo apt update
-sudo apt install --install-recommends winehq-stable
+sudo apt install --install-recommends wine
 #sudo apt -y install wine 
 wine msiexec /i ~/Desktop/A      wine32 \
       wine64 \
@@ -18,6 +18,6 @@ wine msiexec /i ~/Desktop/A      wine32 \
       
       
       cd
-      wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400_x64.msi
+      wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400.msi
       #wine msiexec /i ~/Desktop/AmigaForever.msi
-      wine msiexec /i InstallWinUAE4400_x64.msi
+      wine msiexec /i InstallWinUAE4400.msi
