@@ -1,4 +1,4 @@
-ffic#!/bin/bash
+#!/bin/bash
 #***********************************************  #KickOS install script  ***********************************
 # Install KickOS
 # B.Titze 2021
