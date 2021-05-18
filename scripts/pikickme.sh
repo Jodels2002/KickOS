@@ -415,25 +415,11 @@ Configure_Amiga() {
       clear
       toilet "KickOS" --metal
 
-      
+      mkdir "/home/$USER/Documents/FS-UAE/Hard Drives/"
       cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
       
       
-      if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/ClassicWB_P96_v28.zip" ]; then
-      clear
-      toilet "KickOS" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_P96_v28 ...     " 
-      echo " "
-      echo " "
-      cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
-      wget http://download.abime.net/classicwb/ClassicWB_P96_v28.zip
-      unzip -u ./ClassicWB_P96_v28.zip
-      else 
-      clear
-      toilet "KickOS" --metal
-      fi
+      
       
           
       if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/ClassicWB_68K_v28.zip" ]; then
