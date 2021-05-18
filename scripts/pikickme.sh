@@ -382,60 +382,6 @@ Configure_Amiga() {
     fi
       
           
-    if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
-      clear
-      toilet "KickOS" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_68K_v28 ...     " 
-      echo " "
-      echo " "
-      wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
-      unzip -u ./ClassicWB_68K_v28.zip
-    else 
-      echo " "
-    fi 
-      
-      cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
-      
-    if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip" ]; then
-      clear
-      toilet "KickOS" --metal
-      toilet "full 64bit" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_UAE_v28 ...   " 
-      echo " "
-      echo " "
-      cd "/home/$USER/Amiga/hdf/"
-      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      unzip -u ./ClassicWB_UAE_v28.zip
-    else 
-      clear
-      
-    fi
-      
-    if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_OS39_v28.zip" ]; then
-      clear
-      toilet "KickOS" --metal
-      toilet "full 64bit" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_OS39_v28 ...   KickOS full  " 
-      echo " "
-      echo " "
-      cd "/home/$USER/Amiga/hdf/"
-      
-      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
-      unzip -u ./ClassicWB_OS39_v28.zip
-    else 
-      clear
-      
-    fi
-      
-      
-      
-      
     if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
        cd /home/$USER/KickOS/Amiga
        unzip -u /home/$USER/KickOS/Amiga/AROS.zip
