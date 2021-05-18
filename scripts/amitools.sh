@@ -1,10 +1,13 @@
-
+#!/bin/bash
+#***********************************************  #KickOS install script  ***********************************
+# Install KickOS
+# B.Titze 2021
+#***********************************************  Amitools instll ***********************************
 sudo python3 -m pip install -U pip
 sudo python3 -m pip install -U setuptools
 
 sudo pip install amitools
-#sudo pip3 install -U  git+https://github.com/cnvogelg/amitools.git
-#xdftool mydisk.hdf unpack
+
 if [ ! -d /home/pi/Amiga/dir/WB ]; then
       cd /home/pi/Amiga/adf/
       mkdir /home/pi/Amiga/dir/WB
@@ -69,7 +72,7 @@ if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       echo "  Configure ClassicWB_68K_v28 ...     " 
       echo " "
       echo " "
-      wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
+      #wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
       unzip -u ./ClassicWB_68K_v28.zip
     else 
       echo " "
@@ -87,7 +90,7 @@ if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       echo " "
       echo " "
       cd "/home/$USER/Amiga/hdf/"
-      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
+      #wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip -u ./ClassicWB_UAE_v28.zip
     else 
       clear
@@ -105,7 +108,7 @@ if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_UAE_v28.zip ]; then
       echo " "
       cd "/home/$USER/Amiga/hdf/"
       
-      wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
+      #wget http://download.abime.net/classicwb/ClassicWB_OS39_v28.zip
       unzip -u ./ClassicWB_OS39_v28.zip
     else 
       clear
