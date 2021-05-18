@@ -683,7 +683,7 @@ case $CHOICE in
 	    #KickOS_Office 
             KickOS_FS-UAE
 	    KickOS_WinUAE
-	    Configure_Amiga_fs-uae
+	    #Configure_Amiga_fs-uae
             Configure_Amiga
             KickOS_Addons
             #KickOS_Retropie
@@ -698,7 +698,7 @@ case $CHOICE in
 	    #KickOS_Office 
             KickOS_FS-UAE
 	    KickOS_WinUAE
-	    Configure_Amiga_fs-uae
+	    #Configure_Amiga_fs-uae
             Configure_Amiga
             KickOS_Addons
             KickOS_Retropie
