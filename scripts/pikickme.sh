@@ -102,6 +102,7 @@ KickOS_Update() {
       echo " "
       echo " "
       sudo dpkg --configure -a
+      sudo apt-get -y update
       sudo apt-get -y upgrade
 
 }
@@ -156,7 +157,7 @@ KickOS_Office() {
       echo " "
       #sudo apt install -y imagemagick krita-l10n gparted synaptic
       
-      sudo apt install -y libreoffice libreoffice-gtk3 libreoffice-gnome default-jdk
+      sudo apt install -y libreoffice 
 
 }
 
@@ -284,25 +285,29 @@ fi
        echo "  ... here comes WinUAE 64 bit :-) "
       
       
-       sudo dpkg --add-architecture i386
-       wget -nc https://dl.winehq.org/wine-builds/winehq.key
-       sudo apt-key add winehq.key
-       sudo apt -y install wine
-       sudo apt -y install winetricks
+       
+sudo dpkg --add-architecture i386 && sudo apt update
+sudo apt -y install linux-image-686 linux-headers-686
 
-      wine msiexec /i ~/Desktop/A      
-      wine32 \
+
+
+sudo apt -y install gnupg2 software-properties-common
+wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
+sudo apt-add-repository https://dl.winehq.org/wine-builds/debian/
+sudo apt update
+sudo apt install --install-recommends winehq-stable
+#sudo apt -y install wine 
+wine msiexec /i ~/Desktop/A      wine32 \
       wine64 \
       libwine \
       libwine:i386 \
       fonts-wine
       
       
-      cd /home/$USER/Amiga/ 
-      #wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400_x64.msi
-      wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400.msi
-      wine msiexec /i InstallWinUAE4400.msi /qn
+      cd
+      wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400_x64.msi
       #wine msiexec /i ~/Desktop/AmigaForever.msi
+      wine msiexec /i InstallWinUAE4400_x64.msi
       
       fi
       
