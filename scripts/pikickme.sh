@@ -299,11 +299,7 @@ wine msiexec /i ~/Desktop/A      wine32 \
       fonts-wine
       
       
-      cd
-      wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400_x64.msi
-      #wine msiexec /i ~/Desktop/AmigaForever.msi
-      wine msiexec /i wine msiexec /i InstallWinUAE4400_x64.msi
-      fi
+     fi
       
 
  }
