@@ -122,10 +122,9 @@ KickOS_Tools() {
       echo " "
 
           
-      #sudo apt-get install -y libsdl2-2.0-0 libsdl2-ttf-2.0-0 libsdl2-image-2.0-0 libxml2 flac mpg123 libmpeg2-4
-      #sudo apt-get install -y gir1.2-ibus-1.0 libdbus-1-dev libegl1-mesa-dev libibus-1.0-5 libibus-1.0-dev libice-dev libsm-dev libsndio-dev libwayland-bin libwayland-dev libxi-dev libxinerama-dev libxkbcommon-dev libxrandr-dev libxss-dev libxt-dev libxv-dev x11proto-randr-dev x11proto-scrnsaver-dev x11proto-video-dev x11proto-xinerama-dev
+      
       sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet mc
-      sudo apt install -y rpi-imager gparted
+      sudo apt install -y  gparted
       
       clear
       toilet "KickOS" --metal
@@ -171,7 +170,7 @@ KickOS_Office() {
   
       sudo apt purge -y lxde*  lxde-common lxde-core
       sudo apt purge -y cinnamon*
-      sudo apt purge -y raspberrypi-ui-mods
+      #sudo apt purge -y raspberrypi-ui-mods
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
       
