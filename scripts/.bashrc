@@ -84,6 +84,27 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+if [ ! -d /home/pi/.wine/drive_c/Program Files/WinUAE/ ]; then
+ cd
+      wget -nc https://download.abime.net/winuae/releases/InstallWinUAE4400_x64.msi
+      #wine msiexec /i ~/Desktop/AmigaForever.msi
+      wine msiexec /i wine msiexec /i InstallWinUAE4400_x64.msi
+      sudo rm -rf /home/pi/Desktop/WinUAE.lnk
+fi
+
+if [ ! -f /home/pi/Desktop/AmigaForever9Plus.msi]; then
+ cd
+     
+      wine msiexec /i wine msiexec /i AmigaForever9Plus.msi
+      sudo rm -rf /home/pi/Desktop/AmigaForever9Plus.msi
+      
+fi
+if [ ! -f /home/pi/Desktop/C64Forever9Plus.msi]; then
+ cd
+     wine msiexec /i wine msiexec /i C64Forever9Plus.msi
+     sudo rm -rf /home/pi/Desktop/C64Forever9Plus.msi
+fi
+
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
