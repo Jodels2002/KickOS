@@ -168,9 +168,10 @@ KickOS_Office() {
  
  
   
-      sudo apt purge -y lxde*  lxde-common lxde-core
-      sudo apt purge -y cinnamon*
-      #sudo apt purge -y raspberrypi-ui-mods
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      sudo apt purge -y raspberrypi-ui-mods 
+      sudo apt purge -y cups cups-client cups-common cups-server-common
+      sudo update-rc.d motd remove
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
       
