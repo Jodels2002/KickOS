@@ -290,7 +290,7 @@ sudo apt -y install gnupg2 software-properties-common
 wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
 sudo apt-add-repository https://dl.winehq.org/wine-builds/debian/
 sudo apt update
-sudo apt install --install-recommends wine
+sudo apt install -y --install-recommends wine
 
 wine msiexec /i ~/Desktop/A      wine32 \
       wine64 \
