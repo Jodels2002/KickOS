@@ -57,8 +57,11 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
       cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_ADVSP/System/S/
       cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
+      cp -rf /home/pi/.KickOS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
+      cp -rf /home/pi/.KickOS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Configurations/
+      cp -rf /home/pi/.KickOS/Amiga/ClassicWB/ClassicWB-ADVSP.uae  /home/pi/FS-UAE/Configurations/
       
+    
       
       echo " "
       echo " "
@@ -73,10 +76,13 @@ if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
       cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_P96/System/S/
       
       cp -rf /home/pi/Amiga/dir/System_ADVSP/System/Temp/* /home/pi/Amiga/dir/System_P96/System/Temp/
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
-          
+      cp -rf /home/pi/.KickOS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
+      cp -rf /home/pi/.KickOS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Configurations/
+      cp -rf /home/pi/.KickOS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/FS-UAE/Configurations/
       
-      #rm -rf /home/pi/Amiga/Install/ClassicWB_UAE_v28/
+      
+      /home/pi/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Configurations/
+      rm -rf /home/pi/Amiga/Install/ClassicWB_UAE_v28/
       
       else 
       echo " "
@@ -108,13 +114,8 @@ if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
 
       
 
-    else 
-      clear
+ 
       
     fi
        sudo chmod -R 777 /home/$USER/Amiga
-      
-
-      
-      
       
