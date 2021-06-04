@@ -5,15 +5,17 @@
 #***********************************************  #Some Info for the future  ***********************************
 
 
-
-
 #***********************************************  #Preinstall stuff *****************************************
-#*************************************************************************************************************
+
 
  
 sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
 cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
 sudo apt-get install -y toilet dialog 
+
+if [ ! -d /home/$USER/.backup/ ]; then
+mkdir /home/$USER/.backup/
+fi
 clear
 
 if ! grep -q '# Amiga RAM Drive' /etc/fstab ; then
@@ -27,9 +29,12 @@ if ! grep -q '# Amiga RAM Drive' /etc/fstab ; then
    clear
    echo "Amiga RAM Disk always installed..." 
 fi  
-
+#*************************************************************************************************************
 sudo mount -a   
-      
+
+      clear
+      toilet "KickOS" --metal
+
       echo ""
       echo " "
       echo "1>	Hi Guys,"
@@ -52,7 +57,7 @@ sudo mount -a
       
       
 sudo rm -rf /home/$USER/.local/share/Trash/*
-  
+       
       sudo chmod -R 777 /usr/local/bin/
       sudo chmod -R 777 /usr/local/share/
       sudo chmod -R 777 /home/$USER/.backup/
@@ -214,11 +219,17 @@ if [ ! -d /usr/share/icons/AMIGAOSLINUX/ ]; then
 if [ ! -d /usr/share/themes/Amiga3.x_hidpi/ ]; then
       cd /home/$USER/KickOS
       git clone --depth=1 https://github.com/x64k/amitk
-      clear
-      toilet "KickPi-OS" --metal
+      toilet "KickOS" --metal
+
+      echo " "
+      echo " "
       sudo cp -rf /home/$USER/KickOS/amitk /usr/share/themes
       
       git clone --depth=1 https://github.com/lordwolfchild/amigaos_xfwm4_themes
+      toilet "KickOS" --metal
+
+      echo " "
+      echo " "
       clear
       toilet "KickPi-OS" --metal
       sudo cp -rf /home/$USER/KickOS/amigaos_xfwm4_themes/* /usr/share/themes/
@@ -233,7 +244,7 @@ fi
   
       if [ ! -f /home/$USER/.worker/.worker.zip ]; then
       # First installation
-      clear
+      #*************************************************************************************************************
       cd /home/$USER/KickOS/.pac/
       unzip -u  /home/$USER/KickOS/.pac/.worker.zip
       cp -rf /home/$USER/KickOS/.pac/.worker /home/$USER/
@@ -257,12 +268,11 @@ fi
  KickOS_FS-UAE() {
   
       
-clear
+#*************************************************************************************************************
       toilet "KickOS" --metal
 
       echo " "
       echo " "
-      
        echo "  ... here comes FS-UAE 64 bit :-) "
        
        sudo apt install -y fs-uae fs-uae-arcade fs-uae-launcher fs-uae-netplay-server
