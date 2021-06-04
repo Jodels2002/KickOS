@@ -1,14 +1,13 @@
 
-# sudo dpkg --add-architecture i386 && sudo apt update
+ sudo dpkg --add-architecture i386 
 # sudo apt -y install linux-image-686 linux-headers-686
 
-
-
-sudo apt -y install gnupg2 software-properties-common
-wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
-sudo apt-add-repository https://dl.winehq.org/wine-builds/debian/
+wget -nc https://dl.winehq.org/wine-builds/winehq.key
+sudo apt-key add winehq.key
 sudo apt update
-sudo apt install --install-recommends wine
+
+
+sudo apt install --install-recommends winehq-stable
 
 wine msiexec /i ~/Desktop/A      wine32 \
       wine64 \
