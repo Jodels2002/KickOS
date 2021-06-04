@@ -128,8 +128,14 @@ KickOS_Tools() {
       
       clear
       toilet "KickOS" --metal
+
+      echo " "
+      echo " "
       
       #Some little Amiga stuff....
+      
+      echo " "
+      echo " "
       sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms 
       clear
       toilet "KickOS" --metal
@@ -251,10 +257,12 @@ fi
  KickOS_FS-UAE() {
   
       
+clear
+      toilet "KickOS" --metal
 
- 
-       echo " "
-       echo " "
+      echo " "
+      echo " "
+      
        echo "  ... here comes FS-UAE 64 bit :-) "
        
        sudo apt install -y fs-uae fs-uae-arcade fs-uae-launcher fs-uae-netplay-server
@@ -279,9 +287,12 @@ fi
        mkdir /home/$USER/Amiga/conf/ 
        mkdir /home/$USER/Amiga/kickstarts/ 
 
- 
-       echo " "
-       echo " "
+ clear
+      toilet "KickOS" --metal
+
+      echo " "
+      echo " "
+      
        echo "  ... here comes WinUAE 64 bit :-) "
       
       
@@ -342,9 +353,12 @@ Configure_Amiga() {
       mkdir /home/$USER/Amiga/conf/ 
       
            
-      
       clear
       toilet "KickOS" --metal
+
+      echo " "
+      echo " "
+      
       cd ~
       cp -rf /home/$USER/KickOS/Amiga/Amiga.zip /home/$USER
       unzip -u ./Amiga.zip
@@ -415,6 +429,10 @@ Configure_Amiga() {
     
       clear
       toilet "KickOS" --metal
+
+      echo " "
+      echo " "
+      
 
       mkdir "/home/$USER/Documents/FS-UAE/Hard Drives/"
       cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
@@ -513,29 +531,38 @@ KickOS_Addons() {
     
       cd ~/KickOS/config/
       
-     
       clear
       toilet "KickOS" --metal
-      toilet "full" --metal
+
       echo " "
       echo " "
       
+      
+      
+      
       if [ ! -d /home/$USER/sc/cool-retro-term/ ]; then
+      
+       clear
+      toilet "KickOS" --metal
+
+      echo " "
+      echo " "
+      echo "cool-retro-term"
       ./retro-term.sh
       fi
       
-      clear
-      toilet "KickOS" --metal
-      toilet "full" --metal
-      echo " "
-      echo " "
+    
      
       
       
 
       if [ ! -d /home/$USER/games/vice/ ]; then
 	clear
-     	toilet "KickPi-OS" --metal
+      toilet "KickOS" --metal
+
+        echo " "
+        echo " "
+      
 	echo "Vice64"
      	echo " "
      	echo " "
@@ -564,7 +591,7 @@ KickOS_Addons() {
        sudo cp -R /home/$USER/KickOS/PhotoGIMP\ by\ Diolinux\ v2020\ for\ Flatpak/.var/app/org.gimp.GIMP/config/* ~/.config
        echo " PhotoGimp by Diolinux installed..."
       
-      sleep 3s
+ 
       else 
       
       echo " Gimp is already installed..."
@@ -606,8 +633,11 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
      
       sudo __nodialog=1 ./retropie_packages.sh setup basic_install
      
-      clear
+       clear
       toilet "KickOS" --metal
+
+      echo " "
+      echo " "
       sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
       
       cd /home/$USER/KickOS/Retropie/
@@ -662,9 +692,11 @@ if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; the
 
 cd ~
 
-clear
-toilet "KickOS" --metal
+ clear
+      toilet "KickOS" --metal
 
+      echo " "
+      echo " "
 case $CHOICE in
         
         1)
@@ -712,7 +744,9 @@ case $CHOICE in
 esac
 
 
-echo " "
+      clear
+      toilet "KickOS" --metal
+
       echo " "
       echo "  ... cleanup and finish setup  "  
       sudo rm -rf /home/$USER/.bashrc
@@ -730,11 +764,11 @@ echo " "
       sudo chmod -R 777 /home/$USER/.local/
       sudo chmod -R 777 /home/$USER/Amiga
 
-clear
-toilet "KickOS" --metal
-cd
-clear
-toilet "KickOS" --metal
+ clear
+      toilet "KickOS" --metal
+
+      echo " "
+     
 echo "KickOS ROM Operating System and Libraries" 
 echo "Copyrigt r 2020-2021 KickOS"
 echo "All Rights Reserved. B.Titze"
