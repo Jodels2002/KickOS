@@ -129,7 +129,7 @@ KickOS_Tools() {
           
       
       sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet mc
-      sudo apt install -y  gparted
+      sudo apt install -y  gparted p7zip-full
       
       clear
       toilet "KickOS" --metal
