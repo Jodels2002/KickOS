@@ -9,5 +9,4 @@ sudo mksquashfs /home/pi/Documents/KickOS/  filesystem.squashfs
 
 
 
-cd /home/pi/Documents/
-sudo genisoimage -J -l -R -V "KickOS" -iso-level 4 -o KickOS.iso /home/pi/Documents/temp/
+
