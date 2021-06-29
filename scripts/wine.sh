@@ -1,11 +1,13 @@
 
- sudo dpkg --add-architecture i386 
-# sudo apt -y install linux-image-686 linux-headers-686
+sudo dpkg --add-architecture i386 
 
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
-sudo apt update
 
+sudo apt update
+sudo apt-get install software-properties-common
+
+sudo apt-add-repository 'deb http://dl.winehq.org/wine-builds/debian/ buster main'
 
 sudo apt install --install-recommends winehq-stable
 
