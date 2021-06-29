@@ -1,13 +1,18 @@
 
 sudo dpkg --add-architecture i386 
 
+wget -nc https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10/i386/libfaudio0_20.01-0~buster_i386.deb
+sudo apt install ./libfaudio0_20.01-0~buster_i386.deb
+
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
 
-sudo apt update
+
 sudo apt-get install software-properties-common
 
 sudo apt-add-repository 'deb http://dl.winehq.org/wine-builds/debian/ buster main'
+sudo apt update
+
 
 sudo apt install --install-recommends winehq-stable
 
