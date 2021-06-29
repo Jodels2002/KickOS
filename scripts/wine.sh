@@ -8,13 +8,13 @@ wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
 
 
-sudo apt-get install software-properties-common
+sudo apt-get install -y software-properties-common
 
 sudo apt-add-repository 'deb http://dl.winehq.org/wine-builds/debian/ buster main'
 sudo apt update
 
 
-sudo apt install --install-recommends winehq-stable
+sudo apt install -y --install-recommends winehq-stable
 
 wine msiexec /i ~/Desktop/A      wine32 \
       wine64 \
