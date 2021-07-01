@@ -318,7 +318,7 @@ sudo apt update
 sudo apt upgrade
 
 
-sudo apt install -y --install-recommends winehq-stable
+sudo apt-get install -y --install-recommends winehq-stable
 
 wine msiexec /i ~/Desktop/A      wine32 \
       wine64 \
