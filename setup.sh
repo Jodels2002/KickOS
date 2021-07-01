@@ -40,9 +40,9 @@ if    [ ! -d "/media/$USER/AMIGA/Shared/" ]; then
       echo "VirtualBox...."
       
      
-      #cd /home/$USER/KickOS/.pac/
+      cd /home/$USER/KickOS/.pac/
        
-      #sudo ./VBoxLinuxAdditions.run
+      sudo ./VBoxLinuxAdditions.run
      
       echo " "
       echo " "
