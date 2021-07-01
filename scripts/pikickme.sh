@@ -106,6 +106,11 @@ KickOS_Update() {
       echo "Installing KickOS Update System ..."
       echo " "
       echo " "
+      
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      sudo apt purge -y raspberrypi-ui-mods 
+      sudo apt purge -y cups cups-client cups-common cups-server-common
+      
       sudo dpkg --configure -a
       sudo apt-get -y update
       sudo apt-get -y upgrade
