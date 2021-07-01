@@ -315,7 +315,7 @@ fi
 sudo dpkg --add-architecture i386 
 
 wget -nc https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10/i386/libfaudio0_20.01-0~buster_i386.deb
-sudo apt install ./libfaudio0_20.01-0~buster_i386.deb
+sudo apt install -y ./libfaudio0_20.01-0~buster_i386.deb
 
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
