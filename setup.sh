@@ -49,7 +49,7 @@ if    [ ! -d "/media/$USER/AMIGA/Shared/" ]; then
       echo " "
       echo " "
       
- 
+ sudo apt-get install -y linux-headers-$(uname -r)
 	
 sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
 cp  /home/$USER/KickOS/scripts/bashrc /home/$USER/.bashrc
