@@ -125,6 +125,7 @@ KickOS_Tools() {
       
       sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet mc
       sudo apt install -y  gparted p7zip-full
+      sudo apt install -y  pcsxr transmission
       
       clear
       toilet "KickOS" --metal
