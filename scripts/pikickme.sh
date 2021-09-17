@@ -64,9 +64,9 @@ BACKTITLE="KickOS"
 TITLE="Witch KickOS you want?"
 MENU="Please select:"
 
-OPTIONS=(1 "Install KickOS light                          (ca. 30 min)"
-	 2 "Install KickOS full                           (ca. 40 min)"
-         3 "Install KickOS full + RetroPie                (ca. 70 min)")
+OPTIONS=(1 "Install KickOS                                   (ca. 30 min)"
+	 2 "Install KickOS + RetroPie                        (ca. 40 min)"
+         3 "Install KickOS full ( RetroPie, Office, Gimp...  (ca. 70 min)")
         
 
 CHOICE=$(dialog --clear \
@@ -99,11 +99,18 @@ KickOS_Update() {
       
       sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
       sudo apt purge -y raspberrypi-ui-mods 
+       sudo apt purge -y libreoffice*
       sudo apt purge -y cups cups-client cups-common cups-server-common
-      
       sudo dpkg --configure -a
       sudo apt-get -y update
       sudo apt-get -y upgrade
+      clear
+      toilet "KickOS" --metal
+
+      echo " "
+      echo " "
+      echo "           System is cleaned now :-)              "
+      
 
 }
 
@@ -125,7 +132,7 @@ KickOS_Tools() {
       
       sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet mc
       sudo apt install -y  gparted p7zip-full
-      sudo apt install -y  pcsxr transmission
+      sudo apt install -y  transmission
       
       clear
       toilet "KickOS" --metal
@@ -137,7 +144,7 @@ KickOS_Tools() {
       
       echo " "
       echo " "
-      sudo apt-get -y install amiga-fdisk-cross buzztrax grafx2 protracker unadf worker xdms 
+      sudo apt-get -y install  grafx2 protracker  worker xdms 
       clear
       toilet "KickOS" --metal
       echo " "
@@ -175,9 +182,7 @@ KickOS_Office() {
  
  
   
-      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
-      sudo apt purge -y raspberrypi-ui-mods 
-      sudo apt purge -y cups cups-client cups-common cups-server-common
+      
       sudo update-rc.d motd remove
       sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput
       
@@ -269,12 +274,12 @@ fi
 
       echo " "
       echo " "
-       echo "  ... here comes FS-UAE 64 bit :-) "
+       echo "  ... here comes FS-UAE  :-) "
        
        sudo apt install -y fs-uae fs-uae-arcade fs-uae-launcher fs-uae-netplay-server
-       sudo apt install -y autoconf automake build-essential gettext libfreetype6-dev libglew-dev libglib2.0-dev libjpeg-dev libmpeg2-4-dev 
-       sudo apt install -y libopenal-dev libpng-dev libsdl2-dev libsdl2-ttf-dev libtool libxi-dev 
-       sudo apt install -y libxtst-dev zip zlib1g-dev
+       # sudo apt install -y autoconf automake build-essential gettext libfreetype6-dev libglew-dev libglib2.0-dev libjpeg-dev libmpeg2-4-dev 
+       # sudo apt install -y libopenal-dev libpng-dev libsdl2-dev libsdl2-ttf-dev libtool libxi-dev 
+       # sudo apt install -y libxtst-dev zip zlib1g-dev
       
      
       
@@ -727,9 +732,10 @@ case $CHOICE in
             KickOS_Tools
             KickOS_Desktop
             KickOS_FS-UAE
+	    Configure_Amiga_fs-uae
 	    KickOS_WinUAE
             Configure_Amiga
-	    KickOS_Addons
+	    #KickOS_Addons
             
        ;;
         2)
@@ -741,8 +747,8 @@ case $CHOICE in
 	    KickOS_WinUAE
 	    #Configure_Amiga_fs-uae
             Configure_Amiga
-            KickOS_Addons
-            #KickOS_Retropie
+            #KickOS_Addons
+            KickOS_Retropie
             
 	    
        ;;
@@ -751,7 +757,7 @@ case $CHOICE in
             KickOS_Update
             KickOS_Tools
             KickOS_Desktop
-	    #KickOS_Office 
+	    KickOS_Office 
             KickOS_FS-UAE
 	    KickOS_WinUAE
 	    #Configure_Amiga_fs-uae
