@@ -107,8 +107,8 @@ KickOS_Update() {
       clear
       toilet "KickOS" --metal
       sudo apt-get install -y linux-headers-$(uname -r)
-      sudo apt-get install -y linux-headers*
-      sudo apt-get install -y linux-image*
+      sudo apt-get install -y linux-headers
+      sudo apt-get install -y linux-image
       
       echo " "
       echo " "
