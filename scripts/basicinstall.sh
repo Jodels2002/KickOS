@@ -3,7 +3,8 @@
 # Install KickOS
 # B.Titze 2021
 #***********************************************  #Some Info for the future  ***********************************
-
+# usermod -aG sudo bernd
+# https://wiki.debian.org/Simple-CDD/Howto
 
 #***********************************************  #Preinstall stuff *****************************************
 
