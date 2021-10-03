@@ -494,7 +494,7 @@ if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
 
        sudo chmod -R 777 /home/$USER/Amiga
       
-
+ } 
    
 
 
