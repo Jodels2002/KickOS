@@ -404,12 +404,12 @@ Configure_Amiga() {
       echo " "
        
        
-       cd /home/$USER/Amiga/kickstarts/ 
+       cd /home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/
        
        wget https://misapuntesde.com/res/Amiga_roms.zip
      
       unzip -u ./Amiga_roms.zip
-      #rm ./Amiga_roms.zip
+      #rm ./Amiga_roms.zip 
       sudo rm /home/$USER/Amiga/kickstarts/kick20.rom
     fi
       
