@@ -43,7 +43,9 @@ if    [ ! -d "/media/$USER/AMIGA/Shared/" ]; then
 	
 sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
 cp  /home/$USER/KickOS/scripts/bashrc /home/$USER/.bashrc
-sudo raspi-config nonint do_boot_behaviour B2
+sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
+sudo cp -R /home/$USER/KickOS/config/sudoers /etc/
+# sudo raspi-config nonint do_boot_behaviour B2
 cd /home/$USER
 
  echo "VirtualBox...."    
