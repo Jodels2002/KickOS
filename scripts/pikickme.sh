@@ -426,7 +426,7 @@ Configure_Amiga() {
       echo " "
       
       cd ~
-      cp -rf "/home/$USER/KickOS/Amiga/Amiga.zip /home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/"
+      cp -rf /home/$USER/KickOS/Amiga/Amiga.zip "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/"
       unzip -u ./Amiga.zip
       rm ./Amiga.zip
       
@@ -437,7 +437,7 @@ Configure_Amiga() {
       
       
     if [ ! -f ./ClassicWB_P96_v28.zip ]; then
-      if [ ! -d /home/pi/Amiga/dir/WB ]; then
+     
       sudo python3 -m pip install -U pip
       sudo python3 -m pip install -U setuptools
       sudo pip install amitools  
@@ -461,7 +461,7 @@ Configure_Amiga() {
 
       
 
-if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Install/ClassicWB_UAE_v28.zip ]; then
+if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Install/ClassicWB_UAE_v28.zip" ]; then
       clear
       toilet "KickPi-OS" --metal
       toilet "full" --metal
@@ -476,7 +476,7 @@ if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/I
         else 
       echo " "
       
-      fi
+ fi
       
       sudo rm -rf  "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/"
       sudo rm -rf  "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP/"
