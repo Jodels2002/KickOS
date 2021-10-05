@@ -523,10 +523,7 @@ if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/I
       
  echo "Ready to fire up Amiga..."     
 
-    else 
-      clear
-      toilet "KickOS" --metal
-    fi
+
       
           
     if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/AROS/AROS.boot" ]; then
