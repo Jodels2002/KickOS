@@ -387,7 +387,7 @@ wine msiexec /i ~/Desktop/A      wine32 \
 Configure_Amiga() {
 
        
-    if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Amiga_roms.zip"  ]; then
+    if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga_roms.zip"  ]; then
        
       clear
       toilet -F gay NOTE!
@@ -404,31 +404,27 @@ Configure_Amiga() {
       echo " "
        
        
-       cd "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/"
+       cd /home/$USER/.wine/drive_c/users/Public/Documents/
        
        wget https://misapuntesde.com/res/Amiga_roms.zip
      
       unzip -u ./Amiga_roms.zip
-      #rm ./Amiga_roms.zip 
-      sudo rm /home/$USER/Amiga/kickstarts/kick20.rom
+      cp -rf "/home/$USER/KickOS/Amiga/Amiga Files.zip" /home/$USER/.wine/drive_c/users/Public/Documents/
+      unzip -u ./Amiga Files.zip
+     
+      
+
     fi
       
-      cd "/home/$USER/KickOS/Amiga/Amiga.zip /home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/"
-      mkdir hdf
-      mkdir dir
-      mkdir adf
-      mkdir Install
-           
+     
       clear
       toilet "KickOS" --metal
 
       echo " "
       echo " "
       
-      cd ~
-      cp -rf /home/$USER/KickOS/Amiga/Amiga.zip "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/"
-      unzip -u ./Amiga.zip
-      rm ./Amiga.zip
+    
+      
       
      
       
