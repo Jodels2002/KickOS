@@ -7,15 +7,16 @@
 
 #***********************************************  #Preinstall stuff *****************************************
 
-
- 
-sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
-cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
-sudo apt-get install -y toilet dialog 
-
 if [ ! -d /home/$USER/.backup/ ]; then
 mkdir /home/$USER/.backup/
 fi
+ 
+sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
+
+cp -rf  /home/$USER/.backup/.bashrc /home/$USER/.bashrc
+sudo apt-get install -y toilet dialog 
+
+
 clear
 
 
@@ -97,9 +98,8 @@ KickOS_Update() {
       echo " "
       echo " "
       
-      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session lightdm
       sudo apt purge -y raspberrypi-ui-mods 
-       sudo apt purge -y libreoffice*
       sudo apt purge -y cups cups-client cups-common cups-server-common
       sudo dpkg --configure -a
       sudo apt-get -y update
@@ -349,8 +349,8 @@ fi
        
 sudo dpkg --add-architecture i386 
 
-wget -nc https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10/i386/libfaudio0_20.01-0~buster_i386.deb
-sudo apt install -y ./libfaudio0_20.01-0~buster_i386.deb
+# wget -nc https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10/i386/libfaudio0_20.01-0~buster_i386.deb
+# sudo apt install -y ./libfaudio0_20.01-0~buster_i386.deb
 
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
@@ -360,7 +360,7 @@ sudo apt-get install -y software-properties-common
 
 sudo apt-add-repository 'deb http://dl.winehq.org/wine-builds/debian/ buster main'
 sudo apt update
-sudo apt upgrade
+#sudo apt upgrade
 
 
 sudo apt-get install -y --install-recommends winehq-stable
