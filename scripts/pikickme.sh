@@ -533,7 +533,7 @@ if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/I
        cp -rf /home/$USER/KickOS/Amiga/AROS/*  "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir"
     fi
 
-      cd "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/hdf
+      cd "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/hdf"
       
     
       clear
