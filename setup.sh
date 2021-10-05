@@ -11,7 +11,7 @@ echo " "
       sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
       sudo apt -y update
       #sudo apt -y upgrade
-      sudo apt-get install -y toilet dialog mc zip unzip
+      sudo apt-get install -y toilet dialog mc zip unzip sudo
       whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
 sudo chmod -R 777 /home/$USER/KickOS/
 if [ ! -f /home/$USER/.backup/.bashrc ]; then
@@ -37,7 +37,16 @@ if    [ ! -d "/media/$USER/AMIGA/Shared/" ]; then
           fi
 
 
-      echo "VirtualBox...."    
+     
+      
+ # sudo apt-get install -y linux-headers-$(uname -r)
+	
+sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
+cp  /home/$USER/KickOS/scripts/bashrc /home/$USER/.bashrc
+sudo raspi-config nonint do_boot_behaviour B2
+cd /home/$USER
+
+ echo "VirtualBox...."    
       cd /home/$USER/KickOS/.pac/
        
       sudo ./VBoxLinuxAdditions.run
@@ -48,12 +57,5 @@ if    [ ! -d "/media/$USER/AMIGA/Shared/" ]; then
      
       echo " "
       echo " "
-      
- # sudo apt-get install -y linux-headers-$(uname -r)
-	
-sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
-cp  /home/$USER/KickOS/scripts/bashrc /home/$USER/.bashrc
-sudo raspi-config nonint do_boot_behaviour B2
-cd /home/$USER
  
 sudo reboot
