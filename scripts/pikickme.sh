@@ -387,7 +387,7 @@ wine msiexec /i ~/Desktop/A      wine32 \
 Configure_Amiga() {
 
        
-    if [ ! -f /home/$USER/Amiga/kickstarts/Amiga_roms.zip  ]; then
+    if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Amiga_roms.zip"  ]; then
        
       clear
       toilet -F gay NOTE!
@@ -404,7 +404,7 @@ Configure_Amiga() {
       echo " "
        
        
-       cd /home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/
+       cd "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/"
        
        wget https://misapuntesde.com/res/Amiga_roms.zip
      
@@ -413,12 +413,10 @@ Configure_Amiga() {
       sudo rm /home/$USER/Amiga/kickstarts/kick20.rom
     fi
       
-      cd /home/$USER/Amiga/ 
-      
-      
-      cd ~/Amiga
-      mkdir /home/$USER/Amiga/conf/ 
-      
+      cd "/home/$USER/KickOS/Amiga/Amiga.zip /home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/"
+      mkdir hdf
+      mkdir dir
+      mkdir adf
            
       clear
       toilet "KickOS" --metal
@@ -427,16 +425,17 @@ Configure_Amiga() {
       echo " "
       
       cd ~
-      cp -rf /home/$USER/KickOS/Amiga/Amiga.zip /home/$USER
+      cp -rf "/home/$USER/KickOS/Amiga/Amiga.zip /home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/"
       unzip -u ./Amiga.zip
       rm ./Amiga.zip
       
-    
-      
-      cd /home/$USER/Amiga/hdf
+     
       
       
-    if [ ! -f /home/$USER/Amiga/hdf/ClassicWB_P96_v28.zip ]; then
+      cd hdf
+      
+      
+    if [ ! -f ./ClassicWB_P96_v28.zip ]; then
       clear
       toilet "KickOS" --metal
       echo " "
@@ -453,11 +452,11 @@ Configure_Amiga() {
     fi
       
           
-    if [ ! -f "/home/$USER/Amiga/dir/AROS/AROS.boot" ]; then
-       cd /home/$USER/KickOS/Amiga
-       unzip -u /home/$USER/KickOS/Amiga/AROS.zip
+    if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/AROS/AROS.boot" ]; then
+       cd /home/$USER/KickOS/Amiga/Amiga.zip "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/"
+       unzip -u "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/AROS.zip"
        mkdir /home/$USER/Amiga/dir/AROS/
-       cp -rf /home/$USER/KickOS/Amiga/AROS/* /home/$USER/Amiga/dir/AROS/
+       cp -rf /home/$USER/KickOS/Amiga/AROS/* "/home/$USER/KickOS/Amiga/Amiga.zip /home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir"
     fi
 
       cd /home/$USER/Amiga/hdf
@@ -470,8 +469,7 @@ Configure_Amiga() {
       echo " "
 
       
-     cp -rf /home/$USER/KickOS/Amiga/conf/* /home/$USER/Amiga/conf/
-     cp -rf /home/$USER/Amiga/conf/* "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Configurations/"
+     cp -rf /home/$USER/KickOS/Amiga/conf/* "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Configurations/"
      cp -rf /home/$USER/KickOS/Amiga/Amiga.zip /home/$USER
      sudo chmod -R 777 /home/$USER/Amiga
   
