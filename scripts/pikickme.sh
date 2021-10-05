@@ -461,81 +461,64 @@ Configure_Amiga() {
 
       
 
-if [ ! -f /home/$USER/Amiga/Install/ClassicWB_UAE_v28.zip ]; then
+if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Install/ClassicWB_UAE_v28.zip ]; then
       clear
       toilet "KickPi-OS" --metal
       toilet "full" --metal
       
-      cd /home/pi/Amiga/Install
+      cd "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Install"
       
       
       wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
       unzip -u ./ClassicWB_UAE_v28.zip
-      mv  "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/Software/" /home/pi/Amiga/dir/
+      mv  "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Software/" "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/"
       
         else 
       echo " "
       
       fi
       
-      sudo rm -rf  /home/pi/Amiga/dir/System_P96/
-      sudo rm -rf  /home/pi/Amiga/dir/System_ADVSP/
+      sudo rm -rf  "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/"
+      sudo rm -rf  "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP/"
       
       
       echo " "
       echo " "
       echo "  Configure System_ADVSP ...   " 
       
-      mkdir /home/pi/Amiga/dir/System_ADVSP
-      cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
-      xdftool System_ADVSP.hdf unpack /home/pi/Amiga/dir/System_ADVSP
+      mkdir "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP"
+      cd "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Install/ClassicWB_UAE_v28/Hard Disk/"
+      xdftool System_ADVSP.hdf unpack "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP"
       
-      cp -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_ADVSP/System/T/
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_ADVSP/System/S/
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae /home/pi/Amiga/conf/
-      cp -rf /home/pi/Amiga/dir/Software /home/pi/Amiga/dir/System_ADVSP/System/
-      cp -rf /home/pi/Amiga/dir/Games/Kickstarts /home/pi/Amiga/dir/System_ADVSP/System/Devs/
+      cp -rf /home/pi/Amiga/dir/Workbench31/ "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP/System/T/"
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE//dir/System_ADVSP/System/S/"
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Assign-Startup "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE//dir/System_ADVSP/System/S/"
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE//dir/System_ADVSP/System/S/"
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/conf/"
+      cp -rf "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/Software "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP/System/"
+      cp -rf "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/Games/Kickstarts "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP/System/Devs/"
       
       echo " "
       echo " "
       echo "  Configure System_P96 ...   " 
       
-      mkdir /home/pi/Amiga/dir/System_P96
-      cd "/home/pi/Amiga/Install/ClassicWB_UAE_v28/Hard Disk/"
-      xdftool System_P96.hdf unpack /home/pi/Amiga/dir/System_P96
-      cp -rf /home/pi/Amiga/dir/Workbench31/ /home/pi/Amiga/dir/System_P96/System/T/
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/User-Startup /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Assign-Startup /home/pi/Amiga/dir/System_P96/System/S/
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate /home/pi/Amiga/dir/System_P96/System/S/
+      mkdir "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96"
+      cd ""/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Install/ClassicWB_UAE_v28/Hard Disk/"
+      xdftool System_P96.hdf unpack "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96"
+      cp -rf /home/pi/Amiga/dir/Workbench31/ "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/T/"
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/S/"
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/User-Startup "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/S/"
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Assign-Startup "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/S/"
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/S/"
       
-      cp -rf /home/pi/Amiga/dir/System_ADVSP/System/Temp/* /home/pi/Amiga/dir/System_P96/System/Temp/
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae /home/pi/Amiga/conf/
-      cp -rf /home/pi/Amiga/dir/Software /home/pi/Amiga/dir/System_P96/System/    
-      cp -rf /home/pi/Amiga/dir/Games/Kickstarts /home/pi/Amiga/dir/System_P96/System/Devs/
-      #rm -rf /home/pi/Amiga/Install/ClassicWB_UAE_v28/
+      cp -rf "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP/System/Temp/* "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/Temp/"
+      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/conf/"
+      cp -rf /home/pi/Amiga/dir/Software "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/"    
+      cp -rf /home/pi/Amiga/dir/Games/Kickstarts "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/Devs/"
+      #rm -rf "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Install/ClassicWB_UAE_v28/"
       
  
 
-if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
-      clear
-      toilet "KickOS" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_68K_v28 ...     " 
-      echo " "
-      echo " "
-      cd /home/pi/Amiga/Install
-      #get http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
-      #unzip -u ./ClassicWB_68K_v28.zip
-      
-
-      
-    else 
-      echo " "
-    fi 
 
       
  echo "Ready to fire up Amiga..."     
@@ -549,13 +532,13 @@ if [ ! -f "/home/$USER/Amiga/hdf/ClassicWB_68K_v28.zip" ]; then
     if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/AROS/AROS.boot" ]; then
        cd /home/$USER/KickOS/Amiga/Amiga.zip "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/"
        unzip -u "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/AROS.zip"
-       mkdir /home/$USER/Amiga/dir/AROS/
-       cp -rf /home/$USER/KickOS/Amiga/AROS/* "/home/$USER/KickOS/Amiga/Amiga.zip /home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir"
+       mkdir "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/AROS/"
+       cp -rf /home/$USER/KickOS/Amiga/AROS/*  "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir"
     fi
 
-      cd /home/$USER/Amiga/hdf
+      cd "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/hdf
       
-      cd ~/Amiga
+    
       clear
       toilet "KickPi-OS" --metal
    
