@@ -410,7 +410,7 @@ Configure_Amiga() {
      
       unzip -u ./Amiga_roms.zip
       cp -rf "/home/$USER/KickOS/Amiga/Amiga Files.zip" /home/$USER/.wine/drive_c/users/Public/Documents/
-      unzip -u ./Amiga Files.zip
+      unzip -u ./"Amiga Files.zip"
      
       
 
