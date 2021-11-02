@@ -10,8 +10,8 @@ echo " "
 
       sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
       sudo apt -y update
-      #sudo apt -y upgrade
-      sudo apt-get install -y toilet dialog mc zip unzip sudo
+      sudo apt -y upgrade
+      sudo apt-get install -y toilet dialog mc zip unzip 
       whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
 sudo chmod -R 777 /home/$USER/KickOS/
 if [ ! -f /home/$USER/.backup/.bashrc ]; then
