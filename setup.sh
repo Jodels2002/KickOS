@@ -51,7 +51,7 @@ cd /home/$USER
  echo "VirtualBox...."    
       cd /home/$USER/KickOS/.pac/
        
-      sudo ./VBoxLinuxAdditions.run
+      # sudo ./VBoxLinuxAdditions.run
      
       echo " "
       echo " "
