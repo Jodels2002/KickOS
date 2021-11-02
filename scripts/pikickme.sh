@@ -156,19 +156,7 @@ KickOS_Tools() {
       git clone --depth=1 https://github.com/rewtnull/amigafonts
       sudo cp -rf /home/$USER/amigafonts/ttf/* /usr/share/fonts/truetype/
   
-  if [ ! -d /home/$USER/sc/cool-retro-term/ ]; then
-      
-       clear
-      toilet "KickOS" --metal
-
-      echo " "
-      echo " "
-      echo "cool-retro-term"
-      ./retro-term.sh
-      fi
-      
-    
-     
+ 
       
       
 
