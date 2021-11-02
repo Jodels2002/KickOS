@@ -37,21 +37,16 @@ if    [ ! -d "/media/$USER/AMIGA/Shared/" ]; then
           fi
 
 
-     
-      
- # sudo apt-get install -y linux-headers-$(uname -r)
-	
-sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
+# sudo apt-get install -y linux-headers-$(uname -r)
 cp  /home/$USER/KickOS/scripts/bashrc /home/$USER/.bashrc
-sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
-sudo cp -R /home/$USER/KickOS/config/sudoers /etc/
+
 # sudo raspi-config nonint do_boot_behaviour B2
 cd /home/$USER
 
  echo "VirtualBox...."    
       cd /home/$USER/KickOS/.pac/
        
-      # sudo ./VBoxLinuxAdditions.run
+      sudo ./VBoxLinuxAdditions.run
      
       echo " "
       echo " "
