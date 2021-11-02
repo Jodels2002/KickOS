@@ -38,7 +38,7 @@ if    [ ! -d "/media/$USER/AMIGA/Shared/" ]; then
 
 
 # sudo apt-get install -y linux-headers-$(uname -r)
-cp  /home/$USER/KickOS/scripts/bashrc /home/$USER/.bashrc
+cp  /home/$USER/KickOS/scripts/bashrc /home/$USER/bashrc
 
 # sudo raspi-config nonint do_boot_behaviour B2
 cd /home/$USER
