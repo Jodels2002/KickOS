@@ -7,8 +7,11 @@ clear
 echo "Welcome to KickOS"
 echo " "
 echo " "
-
+      sudo chmod -R 777 /home/$USER/KickOS/
       sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
+      sudo chmod -R 777 /usr/local/bin/
+      
+      
       sudo apt -y update
       sudo apt -y upgrade
       sudo apt-get install -y toilet dialog mc zip unzip 
