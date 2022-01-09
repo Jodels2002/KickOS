@@ -11,12 +11,12 @@ echo " "
       sudo cp -R /home/$USER/KickOS/scripts/* /usr/local/bin
       sudo chmod -R 777 /usr/local/bin/
       
-      
+      sudo apt-get update --allow-releaseinfo-change
       sudo apt -y update
       sudo apt -y upgrade
       sudo apt-get install -y toilet dialog mc zip unzip 
       whiptail --msgbox "Optional: \n  \n  Now insert your * AMIGA * USB stick with the \n  * Shared * folder into the Raspberry" 15 50 1
-sudo chmod -R 777 /home/$USER/KickOS/
+      sudo chmod -R 777 /home/$USER/KickOS/
 
 
 if    [ ! -d "/media/$USER/AMIGA/Shared/" ]; then
