@@ -98,9 +98,9 @@ KickOS_Update() {
       echo " "
       echo " "
       
-      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session lightdm
-      sudo apt purge -y raspberrypi-ui-mods 
-      sudo apt purge -y cups cups-client cups-common cups-server-common
+      #sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session lightdm
+      #sudo apt purge -y raspberrypi-ui-mods 
+      #sudo apt purge -y cups cups-client cups-common cups-server-common
       sudo dpkg --configure -a
       sudo apt-get -y update
       sudo apt-get -y upgrade
@@ -183,23 +183,8 @@ KickOS_Tools() {
       
 }
 
-#*********************************************  #Office  **********************************************
-#****************************************************************************************************************
 
-KickOS_Office() {
 
-      clear
-      toilet "KickOS" --metal
-
-      echo " "
-      echo " "
-      echo "            Some Office Tools:)              "
-      echo " "
-      #sudo apt install -y imagemagick krita-l10n gparted synaptic
-      
-      sudo apt install -y libreoffice 
-
-}
 
 
 #*********************************************  #Installing KickOS Desktop*********************************
@@ -337,8 +322,7 @@ fi
        
 sudo dpkg --add-architecture i386 
 
-# wget -nc https://download.opensuse.org/repositories/Emulators:/Wine:/Debian/Debian_10/i386/libfaudio0_20.01-0~buster_i386.deb
-# sudo apt install -y ./libfaudio0_20.01-0~buster_i386.deb
+
 
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
@@ -370,280 +354,10 @@ wine msiexec /i ~/Desktop/A      wine32 \
 
  }
  
-#***************************************** # Configure Amiga *********************************************
-#****************************************************************************************************************
-Configure_Amiga() {
-
-       
-    if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga_roms.zip"  ]; then
-       
-      clear
-      toilet -F gay NOTE!
-      echo " "
-      echo " "
-      echo "The roms and workbench files are under copyrigt! "
-      echo " "
-      echo " "
-      echo "Use only if you have the original!  "
-      echo " (Original Amiga, Amiga Forever,..."
-      echo " "
-      echo "The structure in the "Amiga" folder is adapted to Amiga Forever."
-      echo " "
-      echo " "
-       
-       
-       cd /home/$USER/.wine/drive_c/users/Public/Documents/
-       
-       wget https://misapuntesde.com/res/Amiga_roms.zip
-     
-      unzip -u ./Amiga_roms.zip
-      cp -rf "/home/$USER/KickOS/Amiga/Amiga Files.zip" /home/$USER/.wine/drive_c/users/Public/Documents/
-      unzip -u ./"Amiga Files.zip"
-     
-      
-
-    fi
-      
-     
-      clear
-      toilet "KickOS" --metal
-
-      echo " "
-      echo " "
-      
-    
-      
-      
-     
-      
-      
-      cd hdf
-      
-      
-    if [ ! -f ./ClassicWB_P96_v28.zip ]; then
-     
-      sudo python3 -m pip install -U pip
-      sudo python3 -m pip install -U setuptools
-      sudo pip install amitools  
-      
-      cd "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/adf/"
-      mkdir WB
-      #xdftool amiga-os-300-workbench.adf unpack "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/WB"
-      xdftool amiga-os-310-workbench.adf unpack "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/WB"
-      xdftool amiga-os-310-extras.adf unpack "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/WB"
-      xdftool amiga-os-310-fonts.adf unpack "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/WB"
-      xdftool amiga-os-310-locale.adf unpack "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/WB"
-      xdftool amiga-os-310-storage.adf unpack "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/WB"
-      xdftool amiga-os-310-install.adf unpack "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/WB"
-     fi 
-      
-      
-      
 
 
 
 
-      
-
-if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Install/ClassicWB_UAE_v28.zip" ]; then
-      clear
-      toilet "KickPi-OS" --metal
-      toilet "full" --metal
-      
-      cd "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Install"
-      
-      
-      wget http://download.abime.net/classicwb/ClassicWB_UAE_v28.zip
-      unzip -u ./ClassicWB_UAE_v28.zip
-      mv  "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Software/" "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/"
-      
-        else 
-      echo " "
-      
- fi
-      
-      sudo rm -rf  "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/"
-      sudo rm -rf  "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP/"
-      
-      
-      echo " "
-      echo " "
-      echo "  Configure System_ADVSP ...   " 
-      
-      mkdir "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP"
-      cd "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Install/ClassicWB_UAE_v28/Hard Disk/"
-      xdftool System_ADVSP.hdf unpack "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP"
-      
-      cp -rf /home/pi/Amiga/dir/Workbench31/ "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP/System/T/"
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE//dir/System_ADVSP/System/S/"
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Assign-Startup "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE//dir/System_ADVSP/System/S/"
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE//dir/System_ADVSP/System/S/"
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/ClassicWB-ADVSP.uae "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/conf/"
-      cp -rf "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/Software "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP/System/"
-      cp -rf "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/Games/Kickstarts "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP/System/Devs/"
-      
-      echo " "
-      echo " "
-      echo "  Configure System_P96 ...   " 
-      
-      mkdir "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96"
-      cd ""/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Install/ClassicWB_UAE_v28/Hard Disk/"
-      xdftool System_P96.hdf unpack "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96"
-      cp -rf /home/pi/Amiga/dir/Workbench31/ "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/T/"
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Startup-Sequence "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/S/"
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/User-Startup "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/S/"
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Assign-Startup "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/S/"
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/Activate "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/S/"
-      
-      cp -rf "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_ADVSP/System/Temp/* "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/Temp/"
-      cp -rf /home/pi/.KickPi-OS/Amiga/ClassicWB/ClassicWB-P96.uae "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/conf/"
-      cp -rf /home/pi/Amiga/dir/Software "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/"    
-      cp -rf /home/pi/Amiga/dir/Games/Kickstarts "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/System_P96/System/Devs/"
-      #rm -rf "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Install/ClassicWB_UAE_v28/"
-      
- 
-
-
-      
- echo "Ready to fire up Amiga..."     
-
-
-      
-          
-    if [ ! -f "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/AROS/AROS.boot" ]; then
-       cd /home/$USER/KickOS/Amiga/Amiga.zip "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/"
-       unzip -u "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/AROS.zip"
-       mkdir "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir/AROS/"
-       cp -rf /home/$USER/KickOS/Amiga/AROS/*  "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/dir"
-    fi
-
-      cd "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/hdf"
-      
-    
-      clear
-      toilet "KickPi-OS" --metal
-   
-      echo " "
-      echo " "
-
-      
-     cp -rf /home/$USER/KickOS/Amiga/conf/* "/home/$USER/.wine/drive_c/users/Public/Documents/Amiga Files/WinUAE/Configurations/"
-     cp -rf /home/$USER/KickOS/Amiga/Amiga.zip /home/$USER
-     sudo chmod -R 777 /home/$USER/Amiga
-  
-  }    
-   
-
-
-
-#***************************************** # Configure Amiga FS-UAE *********************************************
-#****************************************************************************************************************
-     
-     
-      Configure_Amiga_fs-uae() {
-     
-      cd /home/$USER/Documents/
-      cp -rf /home/$USER/KickOS/Amiga/FS-UAE.zip /home/$USER/Documents/
-      unzip -u ./FS-UAE.zip      
-      cd /home/$USER/Documents/FS-UAE/
-
-      
-           
-    
-      clear
-      toilet "KickOS" --metal
-
-      echo " "
-      echo " "
-      
-
-      mkdir "/home/$USER/Documents/FS-UAE/Hard Drives/"
-      cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
-      
-      
-      
-      
-          
-      if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/ClassicWB_68K_v28.zip" ]; then
-      clear
-      toilet "KickOS" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_68K_v28 ...     " 
-      echo " "
-      echo " "
-     
-      else 
-      clear
-      toilet "KickOS" --metal
-      echo " "
-      echo " "
-      echo "  Configure ClassicWB_68K_v28 ...     " 
-      echo " "
-      echo " "
-      cd "/home/$USER/Documents/FS-UAE/Hard Drives/"
-      wget http://download.abime.net/classicwb/ClassicWB_68K_v28.zip
-      unzip -u ./ClassicWB_68K_v28.zip
-    
-      fi
-      
-      if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/workbench-311.hdf" ]; then
-      clear
-      toilet "KickOS" --metal
-      echo " "
-      echo " "
-      echo "  Configure AmigaForever workbench-311 ...     " 
-      echo " "
-      echo " "
-      
-      fi
-  
-  if [ ! -f "/home/$USER/Documents/FS-UAE/Hard Drives/AROS/AROS.boot" ]; then
-      cd /home/$USER/KickOS/Amiga
-      unzip -u /home/$USER/KickOS/Amiga/AROS.zip
-      mkdir "/home/$USER/Documents/FS-UAE/Hard Drives/AROS/"
-     cp -rf /home/$USER/KickOS/Amiga/AROS/* "/home/$USER/Documents/FS-UAE/Hard Drives/AROS/"
-  fi
-      
-      clear
-      toilet "KickOS" --metal
-   
-      echo " "
-      echo " "
-      if [ ! -f "/home/$USER/Documents/FS-UAE/Kickstarts/Amiga_roms.zip" ]; then
-      clear
-      toilet -F gay NOTE!
-      echo " "
-      echo " "
-      echo "The roms and workbench files are under copyrigt! "
-      echo " "
-      echo " "
-      echo "Use only if you have the original!  "
-      echo " (Original Amiga, Amiga Forever,..."
-      echo " "
-      echo "The structure in the "Amiga" folder is adapted to Amiga Forever."
-      echo " "
-      echo " "
-      cd /home/$USER/Documents/FS-UAE/Kickstarts/
-      wget https://misapuntesde.com/res/Amiga_roms.zip
-     
-      unzip -u ./Amiga_roms.zip
-      rm ./Amiga_roms.zip
-      fi
-        
-
-      
-      
-     cp -rf /home/$USER/KickOS/Amiga/conf/* /home/$USER/Amiga/conf/ 
-     
-
-      
-      
-      sudo chmod -R 777 /home/$USER/Amiga
-    }    
-   
-
-    
 #****************************************   #KickOS_Addons  ****************************************************
 #****************************************************************************************************************
 
@@ -693,87 +407,6 @@ KickOS_Addons() {
 }
 
      
-#**********************************************  #Install Retropie/Setup  ***************************************
-#****************************************************************************************************************
-  
-  
-KickOS_Retropie() {
-#Install Retropie/Setup
-
-      
-    
-
-      
-
-if [ ! -f "/opt/retropie/supplementary/emulationstation/emulationstation" ]; then     
-    echo " "
-      clear
-      toilet "KickOS" --metal
-      echo " "
-      echo "  ... here comes Retropie :-)     "   
-      echo " "
-      echo " "
-      cd
-      git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
-      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-      cd /home/$USER/RetroPie-Setup/ 
-      sudo __nodialog=1 ./retropie_packages.sh setup binaries
-     
-      sudo __nodialog=1 ./retropie_packages.sh setup basic_install
-     
-       clear
-      toilet "KickOS" --metal
-
-      echo " "
-      echo " "
-      sudo git clone --recursive --depth 1 --branch master "https://github.com/RetroHursty69/es-theme-magazinemadness.git" "/etc/emulationstation/themes/magazinemadness"
-      
-      cd /home/$USER/KickOS/Retropie/
-      sudo unzip -u /home/$USER/KickOS/Retropie/data.zip
-      cp -rf /home/$USER/KickOS/Retropie/roms/* /home/$USER/RetroPie/roms
-  
-      cp $HOME/games/vice/IMAGES/prg/* /home/$USER/RetroPie/roms/c64/    
-      
-      
-      
-      if [ ! -f /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip ]; then
-      clear
-      toilet -F gay Retropie 
-      echo " "
-      echo " "
-      echo "  Add Retropie Bios Files from Archiv.org " 
-      echo " "
-      echo " "
-      cd /home/$USER/RetroPie/BIOS/
-      wget https://archive.org/download/retroarch_bios_pack/extract_to_sytem_folder.zip
-      unzip -u /home/$USER/RetroPie/BIOS/extract_to_sytem_folder.zip
-      #rm /home/$USER/KickOS/Retropie/Romset.zip
-      fi
-      else 
-      clear
-      
-      fi
-      #-----Config Amiberry for Retropie
-  
-      
-      sudo cp -rf /home/$USER/Amiga/kickstarts/* /home/$USER/RetroPie/BIOS/
-      
-      sudo cp -rf /home/$USER/KickOS/Retropie/es_settings.cfg /opt/retropie/configs/all/emulationstation/
-      sudo cp -rf /home/$USER/KickOS/Retropie/es_systems.cfg /etc/emulationstation/
-      cp -rf /home/$USER/KickOS/config/KickOS.mp4  /home/$USER/RetroPie/splashscreens/
-      sudo cp -rf /home/$USER/KickOS/Retropie/splashscreen.list  /etc/
-      
-      
-      sudo chmod -R 777 /home/$USER/RetroPie/
-      sudo chmod -R 777 /home/$USER/RetroPie-Setup/
-      sudo chmod -R 777 /opt/retropie/
-      sudo chmod -R 777 /etc/emulationstation/
-      
-    
-    
-  
-}
-
 
 #**********************************************  #Finish setup  ***************************************
 #****************************************************************************************************************
@@ -792,9 +425,9 @@ case $CHOICE in
             KickOS_Tools
             KickOS_Desktop
             KickOS_FS-UAE
-	    Configure_Amiga_fs-uae
+	    #Configure_Amiga_fs-uae
 	    KickOS_WinUAE
-            Configure_Amiga
+            #Configure_Amiga
 	    #KickOS_Addons
             
        ;;
@@ -806,9 +439,9 @@ case $CHOICE in
             KickOS_FS-UAE
 	    KickOS_WinUAE
 	    #Configure_Amiga_fs-uae
-            Configure_Amiga
+            #Configure_Amiga
             #KickOS_Addons
-            KickOS_Retropie
+           # KickOS_Retropie
             
 	    
        ;;
@@ -817,13 +450,13 @@ case $CHOICE in
             KickOS_Update
             KickOS_Tools
             KickOS_Desktop
-	    KickOS_Office 
+	    #KickOS_Office 
             KickOS_FS-UAE
 	    KickOS_WinUAE
 	    #Configure_Amiga_fs-uae
-            Configure_Amiga
-            KickOS_Addons
-            KickOS_Retropie
+            #Configure_Amiga
+            #KickOS_Addons
+          
             
 	   
            
