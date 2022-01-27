@@ -24,10 +24,10 @@ cp  /home/$USER/KickOS/scripts/bashrc /home/$USER/.bashrc
 
 cd /home/$USER
 
- echo "VirtualBox...."    
-      cd /home/$USER/KickOS/.pac/
+#  echo "VirtualBox...."    
+      # cd /home/$USER/KickOS/.pac/
        
-      sudo ./VBoxLinuxAdditions.run
+      # sudo ./VBoxLinuxAdditions.run
      
       echo " "
       echo " "
