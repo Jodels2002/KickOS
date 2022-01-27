@@ -1,8 +1,8 @@
-# KickOS
+# KickOS * for PC
 
 
 
-KickOS is aimed at Amiga friends who want to revive the Amiga experience for Desktop.
+KickOS for PC is aimed at Amiga friends who want to revive the Amiga experience for Desktop.
 The focus of KickOS is easy handling and Workbench like "Look and feel" :-)
 
 
