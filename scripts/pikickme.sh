@@ -98,17 +98,17 @@ KickOS_Update() {
       echo " "
       echo " "
       
-      #sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session lightdm
-      #sudo apt purge -y raspberrypi-ui-mods 
-      #sudo apt purge -y cups cups-client cups-common cups-server-common
+      sudo apt purge -y lxde  lxde-common lxde-core openbox-lxde-session lightdm
+      sudo apt purge -y raspberrypi-ui-mods 
+      sudo apt purge -y cups cups-client cups-common cups-server-common
       sudo dpkg --configure -a
       sudo apt-get -y update
       sudo apt-get -y upgrade
       clear
       toilet "KickOS" --metal
-      sudo apt-get install -y linux-headers-$(uname -r)
-      sudo apt-get install -y linux-headers
-      sudo apt-get install -y linux-image
+      #sudo apt-get install -y linux-headers-$(uname -r)
+      #sudo apt-get install -y linux-headers
+      #sudo apt-get install -y linux-image
       
       echo " "
       echo " "
@@ -426,7 +426,7 @@ case $CHOICE in
             KickOS_Desktop
             KickOS_FS-UAE
 	    #Configure_Amiga_fs-uae
-	    KickOS_WinUAE
+	    #KickOS_WinUAE
             #Configure_Amiga
 	    #KickOS_Addons
             
@@ -436,11 +436,11 @@ case $CHOICE in
             KickOS_Tools
             KickOS_Desktop
 	    #KickOS_Office 
-            KickOS_FS-UAE
-	    KickOS_WinUAE
+            #KickOS_FS-UAE
+	    #KickOS_WinUAE
 	    #Configure_Amiga_fs-uae
             #Configure_Amiga
-            #KickOS_Addons
+            KickOS_Addons
            # KickOS_Retropie
             
 	    
@@ -451,11 +451,11 @@ case $CHOICE in
             KickOS_Tools
             KickOS_Desktop
 	    #KickOS_Office 
-            KickOS_FS-UAE
-	    KickOS_WinUAE
+            #KickOS_FS-UAE
+	    #KickOS_WinUAE
 	    #Configure_Amiga_fs-uae
             #Configure_Amiga
-            #KickOS_Addons
+            KickOS_Addons
           
             
 	   
