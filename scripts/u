@@ -11,9 +11,7 @@ sudo dpkg --configure -a
 sudo apt -y --fix-broken install
 sudo apt -f -y install
 
-wget -q --spider http://google.com
 
- if [ $? -eq 0 ]; then
 
 
 
@@ -31,9 +29,6 @@ sudo rm -rf /home/$USER/KickPi-OS/
         sudo cp -f -R /home/$USER/KickPi-OS/scripts/.bashrc /usr/local/bin
       sudo chmod -R 777 /usr/local/bin
       /home/$USER/KickPi-OS/scripts/pikickme.sh
- else
-    whiptail --msgbox " Sorry, you must first connect to internet :-)" 20 50 1
- fi
 
 
 
