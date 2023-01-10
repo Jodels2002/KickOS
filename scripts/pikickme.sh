@@ -487,7 +487,9 @@ esac
       sudo chmod -R 777 /home/$USER/Amiga
 
  clear
-      toilet "KickOS" --metal
+      
+      sudo apt-get install -y network-*
+      
 
       echo " "
      
