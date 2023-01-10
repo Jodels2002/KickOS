@@ -14,7 +14,7 @@ echo " "
       sudo apt-get update --allow-releaseinfo-change
       sudo apt -y update
       #sudo apt -y upgrade
-      sudo apt-get install -y toilet dialog mc zip unzip 
+      sudo apt-get install -y toilet dialog mc zip unzip wget
       
 
 
