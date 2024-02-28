@@ -35,5 +35,5 @@ cd /home/$USER
      
       echo " "
       echo " "
-sudo raspi-config nonint do_boot_behaviour B2
+# sudo raspi-config nonint do_boot_behaviour B2
 sudo reboot
