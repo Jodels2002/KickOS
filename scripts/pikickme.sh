@@ -136,6 +136,14 @@ KickOS_Tools() {
       sudo apt install -y  geany geany-plugins-common geany-common zip  unzip xmlstarlet mc
       sudo apt install -y  gparted p7zip-full
       sudo apt install -y  transmission
+      sudo apt install -y  protracker
+      sudo apt-get -y install grafx2
+      	sudo apt install -y gnome-com*
+	sudo apt install -y xserver-xorg xfce4 xfce4-goodies lxinput xini* 
+	sudo apt install -y xfce4-te*
+	sudo apt install -y chromium-b*
+
+   
       
       clear
       toilet "KickOS" --metal
@@ -450,12 +458,13 @@ case $CHOICE in
             KickOS_Update
             KickOS_Tools
             KickOS_Desktop
-	    #KickOS_Office 
-            #KickOS_FS-UAE
+	    KickOS_Office 
+            KickOS_FS-UAE
 	    #KickOS_WinUAE
 	    #Configure_Amiga_fs-uae
             #Configure_Amiga
             KickOS_Addons
+	    KickOS_Retropie
           
             
 	   
